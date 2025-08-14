@@ -23,7 +23,7 @@ code {
   --brand-secondary: #67e8f9; /* cyan-300 */
   --brand-secondary-hover: rgba(34, 211, 238, 0.167); /* cyan-400 with 40% opacity */
   --brand-accent: #EF0163; /* Vivid magenta/red-pink */
-  --brand-accent-hover: #D50050; /* Darker magenta */
+  --brand-accent-hover: #ff2f7fc1; /* Darker magenta */
 
   /* Neutral Colors */
   --neutral-gray: #6B7280; /* Medium gray */
