@@ -2,6 +2,7 @@ import React from 'react';
 import DemoCard from '../components/DemoCard';
 import ServiceCard from '../components/Cards/ServiceCard';
 import ClientCard from '../components/Cards/ClientCard';
+import ProjectImages from '../components/Cards/ProjectImages';
 
 function Home() {
   return (
@@ -42,6 +43,9 @@ function Home() {
         <ClientCard/>
         <ClientCard/>
         <ClientCard/>
+     </div>
+     <div className="p-10 md:mt-16 flex flex-wrap justify-center gap-6">
+      <ProjectImages/>
      </div>
     </div>
   );
