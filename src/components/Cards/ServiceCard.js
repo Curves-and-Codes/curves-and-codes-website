@@ -2,6 +2,7 @@ import React from 'react';
 
 function ServiceCard() {
   return (
+   
     <div
       className="group w-full md:w-[22rem] lg:w-[20rem] relative h-[28rem] [perspective:1000px] "
     >
@@ -45,8 +46,9 @@ function ServiceCard() {
             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </span>.
         </p>
-      </div>
-    </div>
+      </div></div>
+    
+   
   );
 }
 
