@@ -33,3 +33,40 @@ code {
   --shadow-glow: 0 0 60px rgba(239, 1, 100, 0.219); /* Pinkish glow */
   --shadow-glow-secondary: 0 0 40px rgba(54, 253, 253, 0.756);
 }
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 10s linear infinite;
+}
+
+@keyframes float-right-down {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(10px, 0);
+  }
+  66% {
+    transform: translate(10px, 10px);
+  }
+}
+
+@keyframes float-left-up {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(-10px, 0);
+  }
+  66% {
+    transform: translate(-10px, -10px);
+  }
+}
