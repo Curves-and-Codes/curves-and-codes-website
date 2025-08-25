@@ -5,7 +5,6 @@ function HexagonGridBgAbout() {
   const [clients, setClients] = useState(0);
   const [countries, setCountries] = useState(0);
 
-  // Animated counters
   useEffect(() => {
     let projectsTarget = 120;
     let clientsTarget = 80;
@@ -76,31 +75,30 @@ function HexagonGridBgAbout() {
           </div>
         </div>
 
-        {/* Right side stats & highlights */}
         <div className="flex flex-col gap-6 items-center md:items-start">
-          {/* Counters */}
           <div className="grid grid-cols-3 gap-6 text-white">
-            <div className="text-center">
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition">
               <h2 className="text-4xl font-bold text-[var(--brand-secondary)]">
                 {projects}+
               </h2>
               <p className="mt-1 text-sm">Projects</p>
             </div>
-            <div className="text-center">
+
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition">
               <h2 className="text-4xl font-bold text-[var(--brand-secondary)]">
                 {clients}+
               </h2>
               <p className="mt-1 text-sm">Clients</p>
             </div>
-            <div className="text-center">
+
+            <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition">
               <h2 className="text-4xl font-bold text-[var(--brand-secondary)]">
-                {countries}
+                {countries}+
               </h2>
               <p className="mt-1 text-sm">Countries</p>
             </div>
           </div>
 
-          {/* Feature highlights */}
           <ul className="mt-6 space-y-3 text-white text-lg">
             <li>✔ AI-powered monitoring</li>
             <li>✔ 24/7 real-time alerts</li>

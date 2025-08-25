@@ -83,10 +83,8 @@ function HexagonGridBgHome() {
         <rect width="100%" height="100%" fill="url(#hexPattern)" />
       </svg>
 
-      {/* Content */}
       <div className="relative z-10 w-full max-w-6xl px-4 sm:px-6 lg:px-8">
-        {/* Headline & description */}
-        <div className="text-center">
+          <div className="text-center">
           <h1 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight">
             Trusted Security. Proven Results.
           </h1>
@@ -103,7 +101,7 @@ function HexagonGridBgHome() {
           </a>
         </div>
 
-        {/* Stats */}
+       
         <div className="mt-10 md:mt-14 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           <Stat
             label="Completed Projects"
@@ -126,7 +124,6 @@ function HexagonGridBgHome() {
           />
         </div>
 
-        {/* Optional fine print */}
         <p className="sr-only">
           Satisfaction rate is rounded to two decimals and presented as a
           percentage.
