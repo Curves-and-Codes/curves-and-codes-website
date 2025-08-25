@@ -5,6 +5,7 @@ import ClientCard from "../components/Cards/ClientCard";
 import ProjectImages from "../components/Cards/ProjectImages";
 import BouncyText from "../components/BouncyText";
 import RadarSphere from "../components/RadarSphere";
+import HexagonGridBgHome from "../components/backgrounds/HexagonGridBgHome";
 
 function Home() {
   return (
@@ -14,7 +15,7 @@ function Home() {
           <RadarSphere size="w-64 h-64 md:w-96 md:h-96" />
 
           <div className="flex-1 pt-10 text-center lg:text-left">
-            <h1 className="text-[1rem] md:text-[2rem] xl:text-[3rem] font-extrabold tracking-tight text-white">
+            <h1 className="text-[2rem] md:text-[2rem] xl:text-[3rem] font-extrabold tracking-tight text-white">
               Powering Industry 4.0 with Smart, Secure Solutions
             </h1>
 
@@ -71,7 +72,7 @@ function Home() {
         <ServiceCard />
         <ServiceCard />
       </div>
-
+   
       <div className="overflow-hidden relative w-full py-16">
         <div className="flex gap-6 animate-scroll">
           <div className="flex-none">
@@ -190,7 +191,9 @@ function Home() {
           </div>
         </div>
         <ProjectImages />
+           
       </div>
+      <HexagonGridBgHome/>
     </div>
   );
 }
