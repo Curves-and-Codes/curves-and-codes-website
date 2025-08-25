@@ -1,11 +1,13 @@
-import React from 'react';
+import React from "react";
+import RadarSphere from "../components/RadarSphere";
+import ServicesCarousel from "../components/Cards/ServicesCarousel";
 
 function Services() {
   return (
-    <div className="App bg-gray-300 min-h-screen flex items-center justify-center">
-     <h1 className="text-4xl font-bold text-gray-800">
-      Services Page
-     </h1>
+    <div className="w-full pt-24 bg-[var(--brand-primary)]">
+      <div className="flex justify-center ">
+        <ServicesCarousel />
+      </div>
     </div>
   );
 }
