@@ -1,6 +1,7 @@
 import React from "react";
 import RadarSphere from "../components/RadarSphere";
 import ServicesCarousel from "../components/Cards/ServicesCarousel";
+import HexagonGridBgAbout from "../components/backgrounds/HexagonGridBgAbout";
 
 function Services() {
   return (
@@ -8,6 +9,7 @@ function Services() {
       <div className="flex justify-center ">
         <ServicesCarousel />
       </div>
+      <HexagonGridBgAbout/>
     </div>
   );
 }
