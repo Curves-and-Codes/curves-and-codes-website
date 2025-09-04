@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import ContactUsModal from "../../screens/ContactUsModal";
 
 function useCountUp(target = 0, duration = 1500) {
   const [value, setValue] = useState(0);
@@ -48,6 +49,7 @@ function Stat({ label, value, suffix = "+", duration = 1500 }) {
 }
 
 function HexagonGridBgHome() {
+     const [open, setOpen] = useState(false);
   return (
     <section
       className="relative w-full h-[100vh] flex items-center justify-center overflow-hidden"
@@ -93,12 +95,12 @@ function HexagonGridBgHome() {
             reliable, scalable solutions tailored to your needs.
           </p>
 
-          <a
-            href="#contact"
+          <button
+           onClick={() => setOpen(true)}
             className="mt-6 inline-block px-6 py-3 text-base md:text-lg font-semibold bg-[var(--brand-accent)] text-white rounded-2xl shadow-lg hover:bg-[var(--brand-accent-hover)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-secondary)]"
           >
             Get in Touch
-          </a>
+          </button>
         </div>
 
        
@@ -129,6 +131,7 @@ function HexagonGridBgHome() {
           percentage.
         </p>
       </div>
+         <ContactUsModal isOpen={open} onClose={() => setOpen(false)} />
     </section>
   );
 }

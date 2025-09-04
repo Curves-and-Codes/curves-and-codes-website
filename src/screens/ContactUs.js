@@ -1,9 +1,11 @@
 import React from "react";
 import Footer from "../components/Footer";
+import HexagonGridBgContactus from "../components/backgrounds/HexagonGridBgContactus";
 
 function ContactUs() {
   return (
-    <div className="min-h-screen pt-24 flex items-center justify-center bg-[var(--brand-primary)]  text-white px-4 py-10">
+    <div className="min-h-screen pt-24  bg-[var(--brand-primary)]  text-white  py-10">
+      <div className="flex items-center justify-center px-10">
       <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-10">
         {/* Left side form */}
         <div className="bg-gray-900/70 p-8 rounded-2xl shadow-[0_0_25px_var(--shadow-glow)] backdrop-blur-md border border-gray-700">
@@ -57,7 +59,8 @@ function ContactUs() {
           </p>
         </div>
       </div>
-      
+    </div>
+      <HexagonGridBgContactus/>
     </div>
   );
 }

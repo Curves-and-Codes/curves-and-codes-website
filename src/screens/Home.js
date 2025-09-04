@@ -13,11 +13,11 @@ function Home() {
    const [open, setOpen] = useState(false);
   return (
       <div className="bg-[var(--brand-primary)] overflow-hidden">
-      <section className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-20 pb-15">
+        <section className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-20 pb-15">
         <AnimatedCanvas />
         <div className="absolute inset-0 z-10 backdrop-blur-md"></div>
-      <div className="relative z-20 text-white text-center">
-      <div className="flex justify-center">
+         <div className="relative z-20 text-white text-center">
+         <div className="flex justify-center">
         <div className="p-10 flex flex-col lg:flex-row items-center gap-10">
           <RadarSphere size="w-64 h-64 md:w-96 md:h-96" />
 
@@ -59,7 +59,7 @@ function Home() {
             <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
               <button
                onClick={() => setOpen(true)}
-                className="inline-flex items-center justify-center rounded-2xl px-5 py-3 bg-[var(--brand-accent)] text-white font-semibold shadow hover:opacity-90 transition"
+                className="inline-flex items-center justify-center rounded-2xl px-5 py-2 bg-[var(--brand-accent)] text-white font-semibold shadow hover:opacity-90 transition"
               >
                 Book a 15-min Discovery Call
               </button>

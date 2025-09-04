@@ -132,7 +132,7 @@ function About() {
           </div>
           <div className="m-10">
             <BouncyText
-              text={`What We Offer`}
+              text={`Our Vision`}
               className="text-2xl sm:text-4xl md:text-5xl text-white  px-4 mt-3 font-extrabold leading-tight text-center  "
             />
           </div>
