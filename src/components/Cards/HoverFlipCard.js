@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from "framer-motion";
-function ServiceCard() {
+function HoverFlipCard({index,title,}) {
   return (
    
     <motion.div
@@ -9,7 +9,7 @@ function ServiceCard() {
       transition={{
         duration: 0.6,
         ease: "easeOut",
-        delay: 2 * 0.2, // Adjust delay based on the index of the card instead of hardcoding 2 put index here
+        delay: index * 0.2, // Adjust delay based on the index of the card instead of hardcoding 2 put index here
       }}
       viewport={{ once: true }}
       className="group  mt-16 w-full md:w-[20rem] lg:w-[20rem] relative h-[28rem] [perspective:1000px] "
@@ -60,4 +60,4 @@ function ServiceCard() {
   );
 }
 
-export default ServiceCard;
+export default HoverFlipCard;
