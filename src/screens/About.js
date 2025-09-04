@@ -78,51 +78,57 @@ function About() {
               className="text-2xl sm:text-4xl md:text-5xl text-white  px-4 mt-3 font-extrabold leading-tight text-center  "
             />
           </div>
-          <p className="text-lg leading-relaxed">
-            At{" "}
-            <span className="font-semibold text-pink-400">
-              Curves & Codes (C&C)
-            </span>
-            , technology isn’t just about systems. it’s about
-            <span className="text-cyan-300 font-semibold"> transformation</span>
-            ,<span className="text-cyan-300 font-semibold"> empowerment</span>,
-            and shaping a smarter future.
-          </p>
+          <div>
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed">
+              At{" "}
+              <span className="font-semibold text-pink-400">
+                Curves & Codes (C&C)
+              </span>
+              , technology isn’t just about systems. it’s about
+              <span className="text-cyan-300 font-semibold">
+                {" "}
+                transformation
+              </span>
+              ,<span className="text-cyan-300 font-semibold"> empowerment</span>
+              , and shaping a smarter future.
+            </p>
 
-          <p className="text-lg leading-relaxed">
-            Since <span className="font-semibold">2010</span>, we’ve grown from
-            a vision-driven startup into a company that blends
-            <span className="text-pink-400 font-semibold"> creativity</span>,
-            <span className="text-pink-400 font-semibold"> engineering</span>,
-            and <span className="text-pink-400 font-semibold"> innovation</span>
-            .
-          </p>
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed mt-4">
+              Since <span className="font-semibold">2010</span>, we’ve grown
+              from a vision-driven startup into a company that blends
+              <span className="text-pink-400 font-semibold"> creativity</span>,
+              <span className="text-pink-400 font-semibold"> engineering</span>,
+              and
+              <span className="text-pink-400 font-semibold"> innovation</span>.
+            </p>
 
-          <p className="text-lg leading-relaxed">
-            From <span className="font-semibold">AI-powered solutions</span> and
-            <span className="font-semibold"> smart surveillance</span>
-            to <span className="font-semibold"> scalable infrastructures</span>,
-            we design ecosystems where technology works seamlessly for people.
-          </p>
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed mt-4">
+              From <span className="font-semibold">AI-powered solutions</span>{" "}
+              and
+              <span className="font-semibold"> smart surveillance</span> to
+              <span className="font-semibold"> scalable infrastructures</span>,
+              we design ecosystems where technology works seamlessly for people.
+            </p>
 
-          <p className="text-xl font-medium text-cyan-300">
-            We’re more than service providers — <br />
-            we are{" "}
-            <span className="text-pink-400 font-bold">
-              partners in progress
-            </span>
-            .
-          </p>
-           
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium text-cyan-300 mt-6">
+              We’re more than service providers — <br />
+              we are{" "}
+              <span className="text-pink-400 font-bold">
+                partners in progress
+              </span>
+              .
+            </p>
+          </div>
+
           <div className="m-10">
             <BouncyText
               text={`Our Journey`}
               className="text-2xl sm:text-4xl md:text-5xl text-white  px-4 mt-3 font-extrabold leading-tight text-center  "
             />
           </div>
-           
+
           <div className="m-10">
-           <JourneyTimeline/>
+            <JourneyTimeline />
           </div>
           <div className="m-10">
             <BouncyText
@@ -171,11 +177,10 @@ function About() {
         </div>
       </section>
 
-      <section className="h-30 flex items-center justify-center text-white bg-cyan-200"></section>
-
-      <footer className="relative">
+    
+       <section className="relative">
         <HexagonGridBgAbout />
-      </footer>
+      </section>
     </div>
   );
 }

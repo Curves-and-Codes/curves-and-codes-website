@@ -6,10 +6,16 @@ import ProjectImages from "../components/Cards/ProjectImages";
 import BouncyText from "../components/BouncyText";
 import RadarSphere from "../components/RadarSphere";
 import HexagonGridBgHome from "../components/backgrounds/HexagonGridBgHome";
+import AnimatedCanvas from "../components/backgrounds/AnimatedCanvas";
 
 function Home() {
   return (
-    <div className="w-full pt-24 py-10 md:py-14 bg-[var(--brand-primary)] ">
+    // <div className="w-full pt-24 py-16 md:py-14 bg-[var(--brand-primary)] ">
+     <div className="bg-[var(--brand-primary)] overflow-hidden">
+      <section className="relative min-h-screen flex flex-col items-center justify-center px-6 py-16">
+        <AnimatedCanvas />
+        <div className="absolute inset-0 z-10 backdrop-blur-md"></div>
+      <div className="relative z-20 text-white text-center">
       <div className="flex justify-center">
         <div className="p-10 flex flex-col lg:flex-row items-center gap-10">
           <RadarSphere size="w-64 h-64 md:w-96 md:h-96" />
@@ -73,25 +79,7 @@ function Home() {
         <ServiceCard />
       </div>
    
-      <div className="overflow-hidden relative w-full py-16">
-        <div className="flex gap-6 animate-scroll">
-          <div className="flex-none">
-            <ClientCard />
-          </div>
-          <div className="flex-none">
-            <ClientCard />
-          </div>
-          <div className="flex-none">
-            <ClientCard />
-          </div>
-          <div className="flex-none">
-            <ClientCard />
-          </div>
-          <div className="flex-none">
-            <ClientCard />
-          </div>
-        </div>
-      </div>
+   
 
       <BouncyText
         text={`A Quick Glimpse of Our Work`}
@@ -189,11 +177,15 @@ function Home() {
               </a>
             </div>
           </div>
-        </div>
+         </div>
         <ProjectImages />
            
-      </div>
-      <HexagonGridBgHome/>
+        </div></div>
+        </section>
+        <section className="relative">
+       <HexagonGridBgHome/>
+      </section>
+    
     </div>
   );
 }

@@ -12,7 +12,7 @@ const ProjectImages = () => {
       }}
       viewport={{ once: true }}
       style={{
-        animation: "float-right-down 4s ease-in-out infinite",
+        // animation: "float-right-down 4s ease-in-out infinite",
       }}
       className="lg:w-[50%] sm:w-full  md:w-full w-[100%]"
     >
@@ -43,7 +43,7 @@ const ProjectImages = () => {
           className="absolute top-[20%] left-[5%] rounded-lg overflow-hidden z-10
                    w-[30%] h-[25%] sm:w-[30%] sm:h-[30%] md:w-[180px] md:h-[120px] md:top-[10%] md:left-[10%]"
           style={{
-            animation: "float-left-up 4s ease-in-out infinite",
+            // animation: "float-left-up 4s ease-in-out infinite",
             border: "2px solid var(--brand-secondary)",
             boxShadow: "var(--shadow-glow-secondary)",
           }}
@@ -64,7 +64,7 @@ const ProjectImages = () => {
           className="absolute bottom-[10%] right-[5%] rounded-lg overflow-hidden z-10
                    w-[40%] h-[30%] sm:w-[35%] sm:h-[30%] md:w-[200px] md:h-[130px] md:bottom-[10%] md:right-[20%]"
           style={{
-            animation: "float-right-down 4s ease-in-out infinite",
+            // animation: "float-right-down 4s ease-in-out infinite",
             border: "2px solid var(--brand-secondary)",
             boxShadow: "var(--shadow-glow-secondary)",
           }}
@@ -85,7 +85,7 @@ const ProjectImages = () => {
           className="absolute top-[30%] right-[1%] rounded-md overflow-hidden z-30
                    w-[30%] h-[25%] sm:w-[25%] sm:h-[30%] md:w-[140px] md:h-[100px] md:top-[20%] md:right-[20%]"
           style={{
-            animation: "float-right-down 4s ease-in-out infinite",
+            // animation: "float-right-down 4s ease-in-out infinite",
             border: "2px solid var(--brand-secondary)",
             boxShadow: "var(--shadow-glow-secondary)",
           }}
