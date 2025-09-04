@@ -70,3 +70,13 @@ code {
     transform: translate(-10px, -10px);
   }
 }
+
+.nav-link {
+  outline: none;
+  border: none;
+}
+.nav-link:focus {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}

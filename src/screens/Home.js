@@ -80,12 +80,23 @@ function Home() {
         <ServiceCard />
       </div>
    
-   
-
+             <div className="m-10">
+                <BouncyText
+                  text={`Our Clients`}
+                  className="text-2xl sm:text-4xl md:text-5xl text-white  px-4 mt-3 font-extrabold leading-tight text-center  "
+                />
+              </div>
+                 <div className="p-10 md:mt-16 flex flex-wrap justify-center gap-6 ">
+                <ClientCard />
+                <ClientCard />
+                <ClientCard />
+                <ClientCard />
+                 </div>  
+      <div className="m-10">
       <BouncyText
         text={`A Quick Glimpse of Our Work`}
         className="text-2xl sm:text-4xl md:text-5xl text-white  px-4 mt-3 font-extrabold leading-tight text-center  "
-      />
+      /></div>
         <div>
         <div className="p-10 md:mt-16 flex flex-col lg:flex-row justify-center gap-6">
         <ProjectImages />

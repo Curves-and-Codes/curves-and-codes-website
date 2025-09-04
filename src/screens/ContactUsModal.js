@@ -4,7 +4,7 @@ function ContactUsModal({ isOpen, onClose }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-16 mt-10">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm pt-12 px-4 mt-10">
        <div className="relative w-full max-w-md mx-auto rounded-xl border border-cyan-300 border-[0.2px] shadow-lg p-4 md:p-6 text-white backdrop-blur-md bg-gradient-to-br from-[#67e8f9]/10 via-[#ef0163]/5 to-transparent">
         
         <button
