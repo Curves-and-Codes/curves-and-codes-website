@@ -5,6 +5,7 @@ import BlurryCardWithIcon from "../components/Cards/BlurryCardWithIcon";
 import { LineChart, Shield, Network, Cpu } from "lucide-react";
 import BlurryImageCard from "../components/Cards/BlurryImageCard";
 import BouncyText from "../components/BouncyText";
+import JourneyTimeline from "../components/JourneyTimeline";
 
 function About() {
   const services = [
@@ -112,6 +113,17 @@ function About() {
             </span>
             .
           </p>
+           
+          <div className="m-10">
+            <BouncyText
+              text={`Our Journey`}
+              className="text-2xl sm:text-4xl md:text-5xl text-white  px-4 mt-3 font-extrabold leading-tight text-center  "
+            />
+          </div>
+           
+          <div className="m-10">
+           <JourneyTimeline/>
+          </div>
           <div className="m-10">
             <BouncyText
               text={`What We Offer`}
