@@ -188,8 +188,8 @@ function Home() {
          </div>
         </section>
         <section className="relative">
-       <HexagonGridBgHome/>
-      </section>
+        <HexagonGridBgHome/>
+        </section>
       <ContactUsModal isOpen={open} onClose={() => setOpen(false)} />
     </div>
   );
