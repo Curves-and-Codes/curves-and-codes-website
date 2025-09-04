@@ -22,7 +22,6 @@ const ProjectImages = () => {
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg overflow-hidden border-2 z-10 
                    w-[80%] h-[70%] sm:w-[60%] sm:h-[50%] md:w-[300px] md:h-[200px]"
           style={{
-            
             borderColor: "var(--brand-secondary)",
             boxShadow: "var(--shadow-glow-secondary)",
           }}

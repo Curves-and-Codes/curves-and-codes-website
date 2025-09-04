@@ -78,21 +78,21 @@ function HexagonGridBgAbout() {
         <div className="flex flex-col gap-6 items-center md:items-start">
           <div className="grid grid-cols-3 gap-6 text-white">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition">
-              <h2 className="text-4xl font-bold text-[var(--brand-secondary)]">
+              <h2 className="lg:text-4xl sm:text-3xl text-2xl font-bold text-[var(--brand-secondary)]">
                 {projects}+
               </h2>
               <p className="mt-1 text-sm">Projects</p>
             </div>
 
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition">
-              <h2 className="text-4xl font-bold text-[var(--brand-secondary)]">
+              <h2 className="lg:text-4xl sm:text-3xl text-2xl font-bold text-[var(--brand-secondary)]">
                 {clients}+
               </h2>
               <p className="mt-1 text-sm">Clients</p>
             </div>
 
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 text-center shadow-lg hover:scale-105 transition">
-              <h2 className="text-4xl font-bold text-[var(--brand-secondary)]">
+              <h2 className="lg:text-4xl sm:text-3xl text-2xl font-bold text-[var(--brand-secondary)]">
                 {countries}+
               </h2>
               <p className="mt-1 text-sm">Countries</p>
