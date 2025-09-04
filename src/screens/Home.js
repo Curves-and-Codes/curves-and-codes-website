@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import DemoCard from "../components/DemoCard";
 import ServiceCard from "../components/Cards/ServiceCard";
 import ClientCard from "../components/Cards/ClientCard";
@@ -7,12 +7,13 @@ import BouncyText from "../components/BouncyText";
 import RadarSphere from "../components/RadarSphere";
 import HexagonGridBgHome from "../components/backgrounds/HexagonGridBgHome";
 import AnimatedCanvas from "../components/backgrounds/AnimatedCanvas";
+import ContactUsModal from "./ContactUsModal";
 
 function Home() {
+   const [open, setOpen] = useState(false);
   return (
-    // <div className="w-full pt-24 py-16 md:py-14 bg-[var(--brand-primary)] ">
-     <div className="bg-[var(--brand-primary)] overflow-hidden">
-      <section className="relative min-h-screen flex flex-col items-center justify-center px-6 py-16">
+      <div className="bg-[var(--brand-primary)] overflow-hidden">
+      <section className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-20 pb-15">
         <AnimatedCanvas />
         <div className="absolute inset-0 z-10 backdrop-blur-md"></div>
       <div className="relative z-20 text-white text-center">
@@ -56,18 +57,18 @@ function Home() {
             </p>
 
             <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-              <a
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-2xl px-5 py-3 bg-[var(--brand-accent)] text-black font-semibold shadow hover:opacity-90 transition"
+              <button
+               onClick={() => setOpen(true)}
+                className="inline-flex items-center justify-center rounded-2xl px-5 py-3 bg-[var(--brand-accent)] text-white font-semibold shadow hover:opacity-90 transition"
               >
-                Request a Proposal
-              </a>
-              <a
+                Book a 15-min Discovery Call
+              </button>
+              {/* <a
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-2xl px-5 py-3 border border-white/20 text-white hover:bg-white/5 transition"
               >
                 Book a 15-min Discovery Call
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
@@ -85,8 +86,8 @@ function Home() {
         text={`A Quick Glimpse of Our Work`}
         className="text-2xl sm:text-4xl md:text-5xl text-white  px-4 mt-3 font-extrabold leading-tight text-center  "
       />
-
-      <div className="p-10 md:mt-16 flex flex-col lg:flex-row justify-center gap-6">
+        <div>
+        <div className="p-10 md:mt-16 flex flex-col lg:flex-row justify-center gap-6">
         <ProjectImages />
         <div className="flex justify-center">
           <div className="flex flex-col lg:flex-row items-center gap-8">
@@ -132,8 +133,8 @@ function Home() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="p-10 md:mt-16 flex flex-col lg:flex-row justify-center gap-6">
+        </div>
+         <div className="p-10 md:mt-16 flex flex-col lg:flex-row justify-center gap-6">
         <div className="flex justify-center">
           <div className="flex flex-col lg:flex-row items-center gap-8">
             <div className="flex-1 text-center lg:text-left">
@@ -180,12 +181,16 @@ function Home() {
          </div>
         <ProjectImages />
            
-        </div></div>
+        </div>
+        </div>
+        
+        
+         </div>
         </section>
         <section className="relative">
        <HexagonGridBgHome/>
       </section>
-    
+      <ContactUsModal isOpen={open} onClose={() => setOpen(false)} />
     </div>
   );
 }
