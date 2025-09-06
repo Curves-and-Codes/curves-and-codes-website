@@ -9,6 +9,7 @@ import HexagonGridBgHome from "../components/backgrounds/HexagonGridBgHome";
 import AnimatedCanvas from "../components/backgrounds/AnimatedCanvas";
 import ContactUsModal from "./ContactUsModal";
 import insta from "../assests/images/insta.png";
+import FlippingCardCarousel from "../components/Cards/FlippingCardCarousel";
 
 function Home() {
   const [open, setOpen] = useState(false);
@@ -30,6 +31,22 @@ function Home() {
         "Our surveillance solutions go beyond traditional monitoring — integrating AI, IoT, and real-time analytics to provide actionable insights. Whether it’s smart cities, enterprises, or industrial infrastructure, we deliver systems that evolve with changing threats and create safer environments.",
     },
     {
+      image: insta,
+      title: "Web & App Development",
+      description:
+        "We build powerful, modern, and scalable applications that deliver seamless experiences across web and mobile platforms.",
+      backText:
+        "Using cutting-edge technologies like React, Next.js, Spring Boot, and cloud-native systems, we create applications that are not just functional but future-ready. Our solutions are designed to handle scale, performance, and reliability while keeping user experience at the core.",
+    },
+     {
+      image: insta,
+      title: "Web & App Development",
+      description:
+        "We build powerful, modern, and scalable applications that deliver seamless experiences across web and mobile platforms.",
+      backText:
+        "Using cutting-edge technologies like React, Next.js, Spring Boot, and cloud-native systems, we create applications that are not just functional but future-ready. Our solutions are designed to handle scale, performance, and reliability while keeping user experience at the core.",
+    },
+     {
       image: insta,
       title: "Web & App Development",
       description:
@@ -119,12 +136,18 @@ function Home() {
         <AnimatedCanvas />
         <div className="absolute inset-0 z-10 backdrop-blur-md"></div>
         <div className="relative z-20 text-white text-center">
-          <div className="flex flex-wrap gap-6 justify-center lg:mt-16 mt-8">
+          {/* <div className="flex flex-wrap gap-6 justify-center lg:mt-16 mt-8">
             {services.map((s, idx) => (
               <HoverFlipCard key={idx} index={idx} {...s} />
             ))}
-          </div>
-
+          </div> */}
+           {/* <div className="m-10">
+            <BouncyText
+              text={`Meets us`}
+              className="text-2xl sm:text-4xl md:text-5xl text-white  px-4 mt-3 font-extrabold leading-tight text-center  "
+            />
+          </div> */}
+        <FlippingCardCarousel services={services} />
           <div className="m-10">
             <BouncyText
               text={`Our Clients`}
