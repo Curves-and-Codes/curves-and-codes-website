@@ -66,8 +66,8 @@ function About() {
     },
   ];
   return (
-    <div className="bg-[var(--brand-primary)] overflow-hidden">
-      <section className="relative min-h-screen flex flex-col items-center justify-center px-6 py-16">
+    <div className="bg-[var(--brand-primary)]  mt-16  overflow-hidden">
+      <section className="relative h-full min-h-screen flex flex-col items-center justify-center   px-6 py-16">
         <AnimatedCanvas />
         <div className="absolute inset-0 z-10 backdrop-blur-md"></div>
 
@@ -153,7 +153,7 @@ function About() {
             />
           </div>
           <div
-            className="grid gap-6 mt-20 
+            className="grid gap-6  mt-30 
               grid-cols-1 
               sm:grid-cols-2 
               lg:grid-cols-3 
@@ -171,9 +171,9 @@ function About() {
         </div>
       </section>
 
-      <section className="h-30 flex items-center justify-center text-white bg-cyan-200"></section>
+     
 
-      <footer className="relative">
+      <footer className=" ">
         <HexagonGridBgAbout />
       </footer>
     </div>

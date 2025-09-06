@@ -25,23 +25,41 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="navbar">
+      <nav className="navbar " role="navigation" aria-label="Main navigation">
         <div className="navbar-logo">
-          <img src={logo} alt="Logo" />
+          <NavLink to="/" aria-label="Homepage">
+            <img src={logo} alt="Logo" />
+          </NavLink>
         </div>
 
         {/* Desktop Links */}
         <ul className="navbar-links">
           {navLinks.map((link, idx) => (
-            <li key={idx} className="nav-item">
-              <NavLink to={link.path} className="nav-link">
+            <li
+              key={idx}
+              className="nav-item"
+              aria-haspopup={link.subPaths ? "true" : undefined}
+            >
+              <NavLink
+                to={link.path}
+                className={({ isActive }) =>
+                  isActive ? "nav-link active" : "nav-link"
+                }
+                aria-expanded={link.subPaths ? "false" : undefined}
+              >
                 {link.name}
               </NavLink>
               {link.subPaths && (
-                <ul className="dropdown">
+                <ul className="dropdown" role="menu" aria-label={`${link.name} submenu`}>
                   {link.subPaths.map((sub, subIdx) => (
-                    <li key={subIdx}>
-                      <NavLink to={sub.path} className="nav-link dropdown-link">
+                    <li key={subIdx} role="none">
+                      <NavLink
+                        to={sub.path}
+                        className={({ isActive }) =>
+                          isActive ? "nav-link dropdown-link active" : "nav-link dropdown-link"
+                        }
+                        role="menuitem"
+                      >
                         {sub.name}
                       </NavLink>
                     </li>
@@ -76,14 +94,25 @@ const Navbar = () => {
         </a>
 
         {/* Mobile Menu Button */}
-        <button onClick={toggleNavbar} className="menu-btn">
+        <button
+          onClick={toggleNavbar}
+          className="menu-btn"
+          aria-label={isOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isOpen}
+          aria-controls="mobile-menu"
+        >
           <Bars3Icon className="h-6 w-6" />
         </button>
       </nav>
 
       {/* Mobile Side Menu */}
-      <div className={`mobile-menu ${isOpen ? "open" : ""}`}>
-        <button className="close-btn" onClick={toggleNavbar}>
+      <div
+        id="mobile-menu"
+        className={`mobile-menu ${isOpen ? "open" : ""}`}
+        role="menu"
+        aria-hidden={!isOpen}
+      >
+        <button className="close-btn" onClick={toggleNavbar} aria-label="Close menu">
           <XMarkIcon className="h-6 w-6" />
         </button>
         <ul>
@@ -93,6 +122,7 @@ const Navbar = () => {
                 to={link.path}
                 className="nav-link"
                 onClick={toggleNavbar}
+                role="menuitem"
               >
                 {link.name}
               </NavLink>
@@ -104,6 +134,7 @@ const Navbar = () => {
                         to={sub.path}
                         className="nav-link"
                         onClick={toggleNavbar}
+                        role="menuitem"
                       >
                         {sub.name}
                       </NavLink>
@@ -117,7 +148,7 @@ const Navbar = () => {
       </div>
 
       {/* Overlay */}
-      {isOpen && <div className="overlay" onClick={toggleNavbar}></div>}
+      {isOpen && <div className="overlay" onClick={toggleNavbar} tabIndex={-1}></div>}
     </>
   );
 };
