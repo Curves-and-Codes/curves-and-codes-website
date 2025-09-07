@@ -1,6 +1,5 @@
-import React, { useRef } from 'react';
-import "./portfolio.scss";
-import { useScroll, motion, useSpring, useTransform } from 'framer-motion';
+import React, { useRef } from "react";
+import { useScroll, motion, useSpring, useTransform } from "framer-motion";
 
 const services = [
   {
@@ -40,32 +39,47 @@ const services = [
   },
 ];
 
-
 const Single = ({ item }) => {
   const ref = useRef();
   const { scrollYProgress } = useScroll({
     target: ref,
   });
-  const y = useTransform(scrollYProgress,[0, 1], [-300, 300]);
+  const y = useTransform(scrollYProgress, [0, 1], [-200, 200]);
 
   return (
-    <section>
-      <div className="container">
-        <div className="wrapper">
-          <div className="imgcontainer" ref={ref}>
-            <img src={item.image} alt={item.title} />
-          </div>
-          <motion.div className="textcontainer" style={{ y }}>
-            <h4>{item.category}</h4>
-            <h2>{item.title}</h2>
-            <p>{item.description}</p>
-            <button>Learn More</button>
-          </motion.div>
+    <section className="h-[80vh] snap-center flex items-center justify-center px-4">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-10 max-w-[1366px] w-full">
+        
+        {/* Image */}
+        <div ref={ref} className="flex-1 flex justify-center">
+          <img
+            src={item.image}
+            alt={item.title}
+            className="w-full max-w-[500px] h-64 md:h-80 object-cover rounded-xl shadow-lg"
+          />
         </div>
+
+        {/* Text */}
+        <motion.div
+          style={{ y }}
+          className="flex-1 flex flex-col gap-6 text-white p-4 md:p-0 text-center md:text-left"
+        >
+          <h4 className="text-teal-400 font-semibold">{item.category}</h4>
+          <h2 className="text-2xl md:text-4xl font-bold font-serif">
+            {item.title}
+          </h2>
+          <p className="text-base md:text-lg text-gray-200 font-light font-serif leading-relaxed">
+            {item.description}
+          </p>
+          <button className="w-40 md:w-48 px-6 py-3 bg-teal-500 text-black font-semibold rounded-md hover:bg-teal-400 transition">
+            Learn More
+          </button>
+        </motion.div>
       </div>
     </section>
   );
 };
+
 
 function Portfolio() {
   const ref = useRef();
@@ -81,14 +95,15 @@ function Portfolio() {
   });
 
   return (
-    <div className="portfolio" ref={ref}>
-      <div className="progress">
-        <h1 className='lg:text-4xl md:text-53xl sm:text-2xl  font-bold text-teal-400'>Our Services</h1>
-        <motion.div style={{ scaleX }} className="progressbar" />
+    <div className="portfolio relative" ref={ref}>
+   
+
+      {/* Service Sections */}
+      <div className="snap-y snap-mandatory">
+        {services.map((item, idx) => (
+          <Single item={item} key={idx} />
+        ))}
       </div>
-      {services.map((item, idx) => (
-        <Single item={item} key={idx} />
-      ))}
     </div>
   );
 }

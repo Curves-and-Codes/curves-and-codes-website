@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from "framer-motion";
-function HoverFlipCard({index,title,}) {
+function HoverFlipCard({index}) {
   return (
    
     <motion.div
