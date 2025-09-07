@@ -28,9 +28,9 @@ const Navbar = () => {
   return (
     <>
       <nav className="navbar">
-        <div className="navbar-logo">
+        <a href="/" className="navbar-logo">
           <img src={logo} alt="Logo" />
-        </div>
+        </a>
 
         {/* Desktop Links */}
         <ul className="navbar-links">

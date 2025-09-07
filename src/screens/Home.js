@@ -112,18 +112,18 @@ function Home() {
               to modernize operations and scale with your business.
             </p>
             <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
-              <a
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-2xl px-5 py-3 bg-[var(--brand-accent)] text-black font-semibold shadow hover:opacity-90 transition"
+              <button
+                onClick={()=>setOpen(true)}
+                className="inline-flex items-center justify-center rounded-2xl px-5 py-3 bg-[var(--brand-accent)] text-white font-semibold shadow hover:opacity-90 transition"
               >
                 Request a Proposal
-              </a>
-              <a
+              </button>
+              {/* <a
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-2xl px-5 py-3 border border-white/20 text-white hover:bg-white/5 transition"
               >
                 Book a 15-min Discovery Call
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
