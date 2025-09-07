@@ -153,7 +153,7 @@ function ContactUs() {
           loop={true}
         />
       )}
-      <Footer />
+     
     </div>
   );
 }
