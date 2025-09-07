@@ -12,10 +12,10 @@ const navLinks = [
   {
     name: "Services",
     path: "/services",
-    subPaths: [
-      { name: "Web Development", path: "/services/web-dev" },
-      { name: "App Development", path: "/services/app-dev" },
-    ],
+    // subPaths: [
+    //   { name: "Web Development", path: "/services/web-dev" },
+    //   { name: "App Development", path: "/services/app-dev" },
+    // ],
   },
   { name: "Contact Us", path: "/contact" },
 ];

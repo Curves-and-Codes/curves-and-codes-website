@@ -112,20 +112,20 @@ function Services() {
       {/* Call to Action */}
       <div className="py-16 bg-[var(--brand-primary)] text-center">
         <div className="max-w-4xl mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-6">
+          <h2 className="text-3xl font-bold text-white mb-6">
             Looking for the Right Technology Partner?
           </h2>
-          <p className="text-xl text-gray-300 mb-8">
+          <p className="text-xl text-white mb-8">
             Explore our solutions or connect with us for a customized proposal
             tailored to your needs.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-2 bg-[var(--brand-secondary)] hover:bg-[var(--brand-secondary)]/80 text-[var(--brand-primary)] font-semibold rounded-xl transition transform hover:scale-105">
-              Explore Solutions
-            </button>
-            <button className="px-8 py-2 bg-transparent border-2 border-[var(--brand-secondary)] text-[var(--brand-secondary)] hover:bg-[var(--brand-secondary)] hover:text-[var(--brand-primary)] font-semibold rounded-xl transition-all">
+           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="/about" className="px-8 py-2 bg-[var(--brand-secondary)] hover:bg-[var(--brand-secondary)]/80 text-[var(--brand-primary)] font-semibold rounded-xl transition transform hover:scale-105">
+              Explore Us
+            </a>
+            <a href="/contact" className="px-8 py-2 bg-transparent border-2 border-[var(--brand-secondary)] text-[var(--brand-secondary)] hover:bg-[var(--brand-secondary)] hover:text-[var(--brand-primary)] font-semibold rounded-xl transition-all">
               Contact Us
-            </button>
+            </a>
           </div>
         </div>
       </div>

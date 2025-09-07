@@ -73,10 +73,10 @@ const Single = ({ item, index }) => {
           <h2 className="text-2xl md:text-4xl font-bold ">
             {item.title}
           </h2>
-          <p className="text-base md:text-lg text-gray-200 font-light  leading-relaxed">
+          <p className="text-base md:text-lg text-gray-200 font-light text-justify leading-relaxed">
             {item.description}
           </p>
-          <button className="w-40 md:w-48 px-6 py-2 bg-cyan-500 text-black font-semibold rounded-md hover:bg-teal-400 transition">
+          <button className="w-40 md:w-48 px-6 py-2 bg-cyan-500 text-white font-semibold rounded-md hover:bg-cyan-400 transition">
             Learn More
           </button>
         </div>
