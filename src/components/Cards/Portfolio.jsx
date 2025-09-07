@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { useScroll, motion, useSpring, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
 const services = [
   {
@@ -39,31 +39,36 @@ const services = [
   },
 ];
 
-const Single = ({ item }) => {
+const Single = ({ item, index }) => {
   const ref = useRef();
-  const { scrollYProgress } = useScroll({
-    target: ref,
-  });
-  const y = useTransform(scrollYProgress, [0, 1], [-200, 200]);
+  const { scrollYProgress } = useScroll({ target: ref });
+  const y = useTransform(scrollYProgress, [0, 1], [-150, 150]);
+
+  const isEven = index % 2 === 0;
 
   return (
-    <section className="h-[80vh] snap-center flex items-center justify-center px-4">
-      <div className="flex flex-col md:flex-row items-center justify-center gap-10 max-w-[1366px] w-full">
-        
+    <section className="h-auto md:h-[80vh] flex items-center justify-center px-4 py-10 md:py-0">
+      <div
+        className={`flex flex-col md:flex-row items-center justify-center gap-10 max-w-[1366px] w-full ${
+          !isEven ? "md:flex-row-reverse" : ""
+        }`}
+      >
         {/* Image */}
-        <div ref={ref} className="flex-1 flex justify-center">
+        <motion.div
+          ref={ref}
+          // Apply scroll effect only on desktop, no effect on mobile
+          style={{ y: typeof window !== "undefined" && window.innerWidth > 768 ? y : 0 }}
+          className="flex-1 flex justify-center"
+        >
           <img
             src={item.image}
             alt={item.title}
-            className="w-full max-w-[500px] h-64 md:h-80 object-cover rounded-xl shadow-lg"
+            className="w-full max-w-[500px] h-64 md:h-80 object-cover rounded-xl shadow-lg hover:scale-105 transition-transform duration-500"
           />
-        </div>
+        </motion.div>
 
         {/* Text */}
-        <motion.div
-          style={{ y }}
-          className="flex-1 flex flex-col gap-6 text-white p-4 md:p-0 text-center md:text-left"
-        >
+        <div className="flex-1 flex flex-col gap-6 text-white p-4 md:p-0 text-center md:text-left">
           <h4 className="text-teal-400 font-semibold">{item.category}</h4>
           <h2 className="text-2xl md:text-4xl font-bold font-serif">
             {item.title}
@@ -71,19 +76,17 @@ const Single = ({ item }) => {
           <p className="text-base md:text-lg text-gray-200 font-light font-serif leading-relaxed">
             {item.description}
           </p>
-          <button className="w-40 md:w-48 px-6 py-3 bg-teal-500 text-black font-semibold rounded-md hover:bg-teal-400 transition">
+          <button className="w-40 md:w-48 px-6 py-2 bg-cyan-500 text-black font-semibold rounded-md hover:bg-teal-400 transition">
             Learn More
           </button>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
 };
 
-
-function Portfolio() {
+const Portfolio = () => {
   const ref = useRef();
-
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["end end", "start start"],
@@ -96,16 +99,16 @@ function Portfolio() {
 
   return (
     <div className="portfolio relative" ref={ref}>
-   
-
-      {/* Service Sections */}
-      <div className="snap-y snap-mandatory">
+      <div className="max-w-6xl mx-auto py-16">
+        <h1 className="text-4xl md:text-5xl font-extrabold text-center text-white mb-16">
+          Our Services
+        </h1>
         {services.map((item, idx) => (
-          <Single item={item} key={idx} />
+          <Single key={idx} item={item} index={idx} />
         ))}
       </div>
     </div>
   );
-}
+};
 
 export default Portfolio;
