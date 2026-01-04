@@ -1,23 +1,36 @@
 import React from "react";
+import { motion } from "framer-motion";
 
-function ClientCard() {
+function ClientCard({key, name, image }) {
   return (
-        <div className="relative w-full md:w-[22rem] lg:w-[20rem] rounded-xl border border-white/10 backdrop-blur-sm p-4 md:p-4 bg-brand-cardBackground shadow-glow hover:shadow-glowSecondary transition-shadow duration-300">
-        <div className="flex items-center gap-2">
-            <img
-              src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=765&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="Client"
-              className="w-20 h-20 object-cover rounded-lg shadow-md"
-            />
-       
-        <div>
-        <h2 className="text-white text-lg font-bold">Card Title</h2>
-        <p className="text-gray-300 mt-2 text-xs">eiusmod minim veniam, quis nostrud exercitation ullamco<span>
-         eiusmod minim veniam, quis nostrud </span></p>
-       
-       </div>
-      </div> </div>
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{
+        duration: 0.6,
+        ease: "easeOut",
+        delay: key*0.2,
+      }}
+      viewport={{ once: true }}
+      className="relative max-w-xs rounded-full border border-cyan-300/40 shadow-lg p-6 text-white 
+                 transition-transform hover:scale-105 hover:shadow-xl 
+                 backdrop-blur-sm bg-gradient-to-br from-[#67e8f9]/10 via-[#ef0163]/5 to-transparent"
+    >
+      <div className="flex flex-row items-center gap-4">
+        <div className="w-24 h-24 flex items-center justify-center rounded-full bg-white/5 
+                        shadow-[0_0_20px_rgba(103,232,249,0.25)] overflow-hidden">
+          <img
+            src={image}
+            alt={name}
+            className="w-16 h-16 object-contain"
+          />
+        </div>
 
+        <h2 className="text-lg font-bold text-white tracking-wide">
+          {name}
+        </h2>
+      </div>
+    </motion.div>
   );
 }
 
