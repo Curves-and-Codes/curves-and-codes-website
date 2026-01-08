@@ -11,8 +11,8 @@ function Product() {
       id: 1,
       title: "KEYE Vision AI",
       category: "AI Solutions",
-      image: "https://images.unsplash.com/photo-1677442d019cecf8257bb65daa4d1844?q=80&w=765&auto=format&fit=crop",
-      description: "Advanced computer vision and AI-powered image analysis for real-time insights",
+      image: "https://images.unsplash.com/photo-1676933162740-0d8f1f3c8b6f?q=80&w=800&auto=format&fit=crop",
+      description: "Advanced computer vision and AI-powered image analysis for real-time insights and automated decision-making",
       features: ["Object Detection", "Real-time Analysis", "ML Integration"],
       badge: "Enterprise"
     },
@@ -20,8 +20,8 @@ function Product() {
       id: 2,
       title: "Smart Surveillance Suite",
       category: "Security",
-      image: "https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=765&auto=format&fit=crop",
-      description: "Comprehensive surveillance system with AI-enabled threat detection",
+      image: "https://images.unsplash.com/photo-1589361194805-49a74dc54e97?q=80&w=800&auto=format&fit=crop",
+      description: "Comprehensive surveillance system with AI-enabled threat detection and intelligent monitoring",
       features: ["24/7 Monitoring", "Alert System", "Cloud Storage"],
       badge: "Pro"
     },
@@ -29,8 +29,8 @@ function Product() {
       id: 3,
       title: "IoT Infrastructure Hub",
       category: "Infrastructure",
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=765&auto=format&fit=crop",
-      description: "Unified IoT device management and smart infrastructure orchestration",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+      description: "Unified IoT device management and smart infrastructure orchestration for seamless connectivity",
       features: ["Device Management", "Real-time Sync", "Scalable"],
       badge: "Enterprise"
     },
@@ -38,8 +38,8 @@ function Product() {
       id: 4,
       title: "SmartOps Dashboard",
       category: "Operations",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=765&auto=format&fit=crop",
-      description: "Comprehensive operational dashboard for Industry 4.0 insights",
+      image: "https://images.unsplash.com/photo-1633356122544-f134324ef6db?q=80&w=800&auto=format&fit=crop",
+      description: "Comprehensive operational dashboard for Industry 4.0 insights with real-time analytics",
       features: ["Analytics", "KPI Tracking", "Automation"],
       badge: "Pro"
     },
@@ -47,8 +47,8 @@ function Product() {
       id: 5,
       title: "Access Control System",
       category: "Security",
-      image: "https://images.unsplash.com/photo-1516321318423-f06f70504c8a?q=80&w=765&auto=format&fit=crop",
-      description: "Biometric and credential-based access management system",
+      image: "https://images.unsplash.com/photo-1614064641938-3bbee52b8b93?q=80&w=800&auto=format&fit=crop",
+      description: "Biometric and credential-based access management with multi-factor authentication",
       features: ["Biometric Auth", "Multi-factor", "Audit Logs"],
       badge: "Standard"
     },
@@ -56,8 +56,8 @@ function Product() {
       id: 6,
       title: "Cloud Infrastructure",
       category: "Infrastructure",
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=765&auto=format&fit=crop",
-      description: "Scalable cloud solutions with enterprise-grade security",
+      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
+      description: "Scalable cloud solutions with enterprise-grade security and 99.99% uptime guarantee",
       features: ["Auto-scaling", "99.99% Uptime", "Compliance"],
       badge: "Enterprise"
     },
@@ -121,64 +121,80 @@ function Product() {
       </div>
 
       {/* Products Grid */}
-      <div className="py-16 bg-[var(--brand-primary)]">
-        <div className="max-w-6xl mx-auto px-6">
+      <div className="py-20 bg-[var(--brand-primary)]">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProducts.map((product, index) => (
               <motion.div
                 key={product.id}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: index * 0.12, ease: "easeOut" }}
                 viewport={{ once: true }}
-                className="group relative h-[28rem] rounded-xl overflow-hidden"
+                className="group relative h-[32rem] rounded-2xl overflow-hidden"
               >
                 {/* Card Container */}
-                <div className="relative w-full h-full bg-[var(--card-background)] rounded-xl shadow-[0_0_15px_rgba(239,1,99,0.3)] hover:shadow-[0_0_30px_rgba(54,253,253,0.5)] transition-shadow duration-500 overflow-hidden border border-white/5">
+                <div className="relative w-full h-full bg-gradient-to-b from-[var(--card-background)] to-gray-900 rounded-2xl shadow-[0_8px_32px_rgba(239,1,99,0.2)] hover:shadow-[0_20px_50px_rgba(54,253,253,0.4)] transition-all duration-500 overflow-hidden border border-white/10 hover:border-[var(--brand-secondary)]/50">
                   
-                  {/* Image */}
-                  <div className="relative w-full h-2/3 overflow-hidden">
+                  {/* Image Container */}
+                  <div className="relative w-full h-2/3 overflow-hidden bg-gradient-to-br from-gray-800 to-black">
                     <img
                       src={product.image}
                       alt={product.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover group-hover:scale-125 transition-transform duration-700 ease-out"
                     />
+                    
+                    {/* Image Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
                     
                     {/* Badge */}
                     <div className="absolute top-4 right-4">
-                      <span className={`px-3 py-1 rounded-full text-xs font-bold ${
-                        product.badge === "Enterprise" 
-                          ? "bg-[var(--brand-secondary)] text-[var(--brand-primary)]"
-                          : product.badge === "Pro"
-                          ? "bg-blue-500 text-white"
-                          : "bg-gray-500 text-white"
-                      }`}>
+                      <motion.span 
+                        whileHover={{ scale: 1.1 }}
+                        className={`px-4 py-2 rounded-full text-xs font-bold backdrop-blur-sm ${
+                          product.badge === "Enterprise" 
+                            ? "bg-[var(--brand-secondary)]/90 text-[var(--brand-primary)] shadow-lg shadow-[var(--brand-secondary)]/50"
+                            : product.badge === "Pro"
+                            ? "bg-blue-500/90 text-white shadow-lg shadow-blue-500/50"
+                            : "bg-gray-600/90 text-white shadow-lg shadow-gray-600/50"
+                        }`}
+                      >
                         {product.badge}
-                      </span>
+                      </motion.span>
                     </div>
                   </div>
 
-                  {/* Content */}
-                  <div className="absolute bottom-0 w-full h-1/3 bg-gradient-to-t from-[var(--card-background)] to-transparent p-4 flex flex-col justify-end">
-                    <h3 className="text-lg font-bold text-white mb-1">{product.title}</h3>
-                    <p className="text-xs text-gray-300 mb-3 line-clamp-2">{product.description}</p>
+                  {/* Content Section */}
+                  <div className="relative w-full h-1/3 p-5 flex flex-col justify-between">
+                    <div>
+                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[var(--brand-secondary)] transition-colors duration-300">
+                        {product.title}
+                      </h3>
+                      <p className="text-xs text-gray-400 mb-4 leading-relaxed line-clamp-2 group-hover:text-gray-300 transition-colors">
+                        {product.description}
+                      </p>
+                    </div>
                     
                     {/* Features */}
                     <div className="flex flex-wrap gap-2">
-                      {product.features.slice(0, 2).map((feature, idx) => (
-                        <span key={idx} className="text-xs bg-white/10 text-[var(--brand-secondary)] px-2 py-1 rounded-full">
+                      {product.features.map((feature, idx) => (
+                        <motion.span 
+                          key={idx}
+                          whileHover={{ scale: 1.05 }}
+                          className="text-xs bg-gradient-to-r from-[var(--brand-secondary)]/20 to-transparent text-[var(--brand-secondary)] px-3 py-1 rounded-full border border-[var(--brand-secondary)]/30 hover:border-[var(--brand-secondary)]/60 transition-all"
+                        >
                           {feature}
-                        </span>
+                        </motion.span>
                       ))}
                     </div>
                   </div>
 
-                  {/* Hover CTA */}
-                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center rounded-xl">
+                  {/* Hover CTA Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-center justify-center rounded-2xl backdrop-blur-sm">
                     <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="px-6 py-3 bg-[var(--brand-secondary)] text-[var(--brand-primary)] font-bold rounded-lg hover:opacity-90 transition"
+                      whileHover={{ scale: 1.08 }}
+                      whileTap={{ scale: 0.92 }}
+                      className="px-8 py-3 bg-gradient-to-r from-[var(--brand-secondary)] to-cyan-400 text-[var(--brand-primary)] font-bold rounded-xl hover:opacity-90 transition shadow-lg shadow-[var(--brand-secondary)]/50"
                     >
                       Learn More
                     </motion.button>
