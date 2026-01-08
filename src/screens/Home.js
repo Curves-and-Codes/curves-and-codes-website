@@ -95,85 +95,74 @@ function Home() {
         className="text-2xl sm:text-4xl md:text-5xl text-white px-4 mt-3 font-extrabold leading-tight text-center"
       />
 
-      <div className="p-10 md:mt-16 flex flex-col lg:flex-row justify-center gap-6">
-        <ProjectImages />
-        <div className="flex justify-center">
-          <div className="flex flex-col lg:flex-row items-center gap-8">
-            <div className="flex-1 text-center lg:text-left">
-              <h1 className="text-[2rem] md:text-[1rem] xl:text-[2rem] font-bold tracking-tight text-white">
-                Title of the Project
-              </h1>
-              <p className="mt-2 text-[#9aa4b2] text-base text-sm">Date: 2024-25</p>
-
-              <p className="mt-5 text-sm md:text-base text-slate-300/90 max-w-2xl">
-                Empowering industries to operate smarter, safer, and more efficiently.{" "}
-                <span className="text-white font-semibold"> Combining technology, creativity,</span>{" "}
-                and <span className="text-white font-semibold">expertise,</span>, we drive the future of industrial digitalization.
-              </p>
-
-              <a
-                href="#"
-                className="group mt-4 inline-flex items-center gap-2 rounded-xl px-5 py-2 bg-[#ef0163] text-white font-semibold hover:translate-y-[-1px] hover:shadow-[0_10px_30px_rgba(239,1,99,0.35)] transition"
-              >
-                View Project
-                <svg
-                  className="w-4 h-4 text-current transition-transform group-hover:scale-110"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13.828 10.172a4 4 0 010 5.656l-1.414 1.414a4 4 0 01-5.656-5.656l1.414-1.414a4 4 0 015.656 0zM10.172 13.828a4 4 0 010-5.656l1.414-1.414a4 4 0 015.656 5.656l-1.414 1.414a4 4 0 01-5.656 0z"
-                  />
-                </svg>
-              </a>
-            </div>
+      <div className="p-10 md:mt-16 flex flex-col lg:flex-row justify-center items-center gap-10 max-w-7xl mx-auto">
+        <ProjectImages imageType="surveillance" />
+        <div className="flex-1 text-center lg:text-left max-w-xl">
+          <div className="inline-block mb-3">
+            <span className="px-3 py-1 bg-gradient-to-r from-[var(--brand-secondary)]/20 to-cyan-400/20 text-[var(--brand-secondary)] rounded-full text-xs font-semibold border border-[var(--brand-secondary)]/30">
+              Featured Project
+            </span>
           </div>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-3">
+            AI-Powered Smart Surveillance System
+          </h2>
+          <p className="text-[var(--brand-secondary)] text-sm font-semibold mb-4">Completed: December 2025</p>
+
+          <p className="text-base text-slate-300/90 leading-relaxed mb-6">
+            Deployed an enterprise-grade surveillance system with <span className="text-white font-semibold">AI-powered threat detection</span> for a major corporate campus, reducing security incidents by <span className="text-[var(--brand-accent)] font-bold">65%</span> and enabling real-time monitoring across <span className="text-white font-semibold">500+ cameras</span>.
+          </p>
+
+          <div className="flex flex-wrap gap-2 mb-6">
+            <span className="px-3 py-1 bg-white/10 text-white text-xs rounded-full">Computer Vision</span>
+            <span className="px-3 py-1 bg-white/10 text-white text-xs rounded-full">Real-time Analytics</span>
+            <span className="px-3 py-1 bg-white/10 text-white text-xs rounded-full">Cloud Integration</span>
+          </div>
+
+          <a
+            href="/services"
+            className="group inline-flex items-center gap-2 rounded-xl px-6 py-3 bg-gradient-to-r from-[var(--brand-secondary)] to-cyan-400 text-[var(--brand-primary)] font-bold hover:shadow-lg hover:shadow-[var(--brand-secondary)]/40 transition-all hover:-translate-y-1"
+          >
+            View Case Study
+            <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
         </div>
       </div>
 
-      <div className="p-10 md:mt-16 flex flex-col lg:flex-row justify-center gap-6">
-        <div className="flex justify-center">
-          <div className="flex flex-col lg:flex-row items-center gap-8">
-            <div className="flex-1 text-center lg:text-left">
-              <h1 className="text-[2rem] md:text-[1rem] xl:text-[2rem] font-bold tracking-tight text-white">
-                Title of the Project
-              </h1>
-              <p className="mt-2 text-[#9aa4b2] text-base text-sm">Date: 2024-25</p>
-
-              <p className="mt-5 text-sm md:text-base text-slate-300/90 max-w-2xl">
-                Empowering industries to operate smarter, safer, and more efficiently.{" "}
-                <span className="text-white font-semibold"> Combining technology, creativity,</span>{" "}
-                and <span className="text-white font-semibold">expertise,</span>, we drive the future of industrial digitalization.
-              </p>
-              <a
-                href="#"
-                className="group mt-4 inline-flex items-center gap-2 rounded-xl px-5 py-2 bg-[#ef0163] text-white font-semibold hover:translate-y-[-1px] hover:shadow-[0_10px_30px_rgba(239,1,99,0.35)] transition"
-              >
-                View Project
-                <svg
-                  className="w-4 h-4 text-current transition-transform group-hover:scale-110"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13.828 10.172a4 4 0 010 5.656l-1.414 1.414a4 4 0 01-5.656-5.656l1.414-1.414a4 4 0 015.656 0zM10.172 13.828a4 4 0 010-5.656l1.414-1.414a4 4 0 015.656 5.656l-1.414 1.414a4 4 0 01-5.656 0z"
-                  />
-                </svg>
-              </a>
-            </div>
+      <div className="p-10 md:mt-16 flex flex-col lg:flex-row-reverse justify-center items-center gap-10 max-w-7xl mx-auto">
+        <ProjectImages imageType="iot" />
+        <div className="flex-1 text-center lg:text-left max-w-xl">
+          <div className="inline-block mb-3">
+            <span className="px-3 py-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-400 rounded-full text-xs font-semibold border border-blue-400/30">
+              IoT Solution
+            </span>
           </div>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-3">
+            Smart Building Automation Platform
+          </h2>
+          <p className="text-blue-400 text-sm font-semibold mb-4">Completed: November 2025</p>
+
+          <p className="text-base text-slate-300/90 leading-relaxed mb-6">
+            Implemented a comprehensive IoT platform managing <span className="text-white font-semibold">10,000+ connected devices</span> across multiple smart buildings, achieving <span className="text-[var(--brand-accent)] font-bold">40% energy savings</span> through intelligent automation and <span className="text-white font-semibold">predictive maintenance</span>.
+          </p>
+
+          <div className="flex flex-wrap gap-2 mb-6">
+            <span className="px-3 py-1 bg-white/10 text-white text-xs rounded-full">IoT Management</span>
+            <span className="px-3 py-1 bg-white/10 text-white text-xs rounded-full">Energy Optimization</span>
+            <span className="px-3 py-1 bg-white/10 text-white text-xs rounded-full">Automation</span>
+          </div>
+
+          <a
+            href="/services"
+            className="group inline-flex items-center gap-2 rounded-xl px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold hover:shadow-lg hover:shadow-blue-500/40 transition-all hover:-translate-y-1"
+          >
+            View Case Study
+            <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </a>
         </div>
-        <ProjectImages />
       </div>
 
       <HexagonGridBgHome />
