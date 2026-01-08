@@ -307,14 +307,14 @@ function Product() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedProduct(null)}
-            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto"
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 pt-20 pb-8 overflow-y-auto"
           >
             <motion.div
               initial={{ scale: 0.9, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-gradient-to-b from-[var(--card-background)] to-gray-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-white/10 shadow-2xl"
+              className="bg-gradient-to-b from-[var(--card-background)] to-gray-900 rounded-2xl max-w-4xl w-full max-h-[85vh] overflow-y-auto border border-white/10 shadow-2xl my-auto"
             >
               {/* Modal Header */}
               <div className="relative h-64 overflow-hidden rounded-t-2xl">
