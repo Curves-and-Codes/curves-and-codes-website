@@ -560,6 +560,236 @@ function Product() {
         </div>
       </div>
 
+      {/* Customer Testimonials */}
+      <div className="py-20 bg-[var(--card-background)]">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="px-4 py-2 bg-gradient-to-r from-[var(--brand-secondary)]/20 to-cyan-400/20 text-[var(--brand-secondary)] rounded-full text-sm font-semibold border border-[var(--brand-secondary)]/30 inline-block mb-4">
+              Testimonials
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Trusted by <span className="bg-gradient-to-r from-[var(--brand-secondary)] to-cyan-400 bg-clip-text text-transparent">Industry Leaders</span>
+            </h2>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              See what our customers have to say about their experience with our products
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                name: "Sarah Johnson",
+                role: "CTO, TechCorp Industries",
+                image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop",
+                quote: "The KEYE Vision AI has revolutionized our manufacturing quality control. We've seen a 40% reduction in defects since implementation.",
+                rating: 5
+              },
+              {
+                name: "Michael Chen",
+                role: "Security Director, GlobalBank",
+                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop",
+                quote: "Outstanding surveillance system! The AI-powered threat detection has enhanced our security posture significantly. Highly recommended.",
+                rating: 5
+              },
+              {
+                name: "Emily Rodriguez",
+                role: "Operations Manager, RetailMax",
+                image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop",
+                quote: "SmartOps Dashboard transformed our operations. Real-time insights help us make data-driven decisions faster than ever before.",
+                rating: 5
+              }
+            ].map((testimonial, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: idx * 0.15 }}
+                viewport={{ once: true }}
+                className="group relative p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 hover:border-[var(--brand-secondary)]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[var(--brand-secondary)]/20"
+              >
+                {/* Quote Icon */}
+                <div className="text-[var(--brand-secondary)]/30 text-5xl font-serif mb-4">"</div>
+                
+                {/* Rating */}
+                <div className="flex gap-1 mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <span key={i} className="text-yellow-400 text-lg">★</span>
+                  ))}
+                </div>
+
+                {/* Quote */}
+                <p className="text-gray-300 text-sm leading-relaxed mb-6 italic">
+                  {testimonial.quote}
+                </p>
+
+                {/* Author */}
+                <div className="flex items-center gap-3">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="w-12 h-12 rounded-full object-cover border-2 border-[var(--brand-secondary)]/30"
+                  />
+                  <div>
+                    <h4 className="text-white font-semibold text-sm">{testimonial.name}</h4>
+                    <p className="text-gray-400 text-xs">{testimonial.role}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* FAQ Section */}
+      <div className="py-20 bg-gradient-to-b from-[var(--card-background)] to-[var(--brand-primary)]">
+        <div className="max-w-4xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="px-4 py-2 bg-gradient-to-r from-[var(--brand-secondary)]/20 to-cyan-400/20 text-[var(--brand-secondary)] rounded-full text-sm font-semibold border border-[var(--brand-secondary)]/30 inline-block mb-4">
+              FAQ
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Frequently Asked <span className="bg-gradient-to-r from-[var(--brand-secondary)] to-cyan-400 bg-clip-text text-transparent">Questions</span>
+            </h2>
+            <p className="text-gray-400 text-lg">
+              Everything you need to know about our products
+            </p>
+          </motion.div>
+
+          <div className="space-y-4">
+            {[
+              {
+                question: "What is included in the Enterprise plan?",
+                answer: "The Enterprise plan includes unlimited users, priority support, custom integrations, dedicated account manager, and advanced analytics. You also get access to all premium features and early access to new products."
+              },
+              {
+                question: "Can I upgrade or downgrade my plan anytime?",
+                answer: "Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll prorate any payments or credits to your account accordingly."
+              },
+              {
+                question: "Do you offer a free trial?",
+                answer: "Yes! We offer a 14-day free trial for all our products with no credit card required. You'll get full access to all features during the trial period."
+              },
+              {
+                question: "What kind of support do you provide?",
+                answer: "We provide 24/7 support via email, chat, and phone for all paid plans. Enterprise customers get a dedicated account manager and priority support with guaranteed response times."
+              },
+              {
+                question: "Is my data secure?",
+                answer: "Absolutely. We use military-grade encryption, comply with SOC 2, ISO 27001, and GDPR standards. Your data is stored in secure, geographically distributed data centers with regular backups."
+              },
+              {
+                question: "Do you offer custom solutions?",
+                answer: "Yes, we work with enterprise clients to develop custom solutions tailored to their specific needs. Contact our sales team to discuss your requirements."
+              }
+            ].map((faq, idx) => (
+              <motion.details
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                viewport={{ once: true }}
+                className="group rounded-xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 hover:border-[var(--brand-secondary)]/30 transition-all duration-300 overflow-hidden"
+              >
+                <summary className="cursor-pointer p-6 text-white font-semibold text-lg flex justify-between items-center hover:text-[var(--brand-secondary)] transition-colors">
+                  {faq.question}
+                  <span className="text-[var(--brand-secondary)] text-2xl transform group-open:rotate-45 transition-transform">+</span>
+                </summary>
+                <div className="px-6 pb-6 text-gray-300 leading-relaxed border-t border-white/5 pt-4">
+                  {faq.answer}
+                </div>
+              </motion.details>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Integration Partners */}
+      <div className="py-20 bg-[var(--brand-primary)]">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <span className="px-4 py-2 bg-gradient-to-r from-[var(--brand-secondary)]/20 to-cyan-400/20 text-[var(--brand-secondary)] rounded-full text-sm font-semibold border border-[var(--brand-secondary)]/30 inline-block mb-4">
+              Integrations
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Seamlessly Integrates With <span className="bg-gradient-to-r from-[var(--brand-secondary)] to-cyan-400 bg-clip-text text-transparent">Your Tools</span>
+            </h2>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              Connect with your favorite tools and platforms for enhanced productivity
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6"
+          >
+            {[
+              { name: "Microsoft Azure", icon: "☁️" },
+              { name: "AWS", icon: "🔶" },
+              { name: "Google Cloud", icon: "🌐" },
+              { name: "Salesforce", icon: "⚡" },
+              { name: "Slack", icon: "💬" },
+              { name: "Jira", icon: "📊" },
+              { name: "GitHub", icon: "🐙" },
+              { name: "Docker", icon: "🐳" },
+              { name: "Kubernetes", icon: "☸️" },
+              { name: "MongoDB", icon: "🍃" },
+              { name: "PostgreSQL", icon: "🐘" },
+              { name: "Redis", icon: "🔴" }
+            ].map((integration, idx) => (
+              <motion.div
+                key={idx}
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="group p-6 rounded-xl bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 hover:border-[var(--brand-secondary)]/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 cursor-pointer"
+              >
+                <span className="text-4xl">{integration.icon}</span>
+                <span className="text-white text-sm font-medium text-center group-hover:text-[var(--brand-secondary)] transition-colors">
+                  {integration.name}
+                </span>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="text-center mt-12"
+          >
+            <p className="text-gray-400 mb-4">Need a custom integration?</p>
+            <motion.a
+              href="/contact"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center px-6 py-3 border-2 border-[var(--brand-secondary)]/50 text-white font-semibold rounded-lg hover:bg-[var(--brand-secondary)]/10 transition-all"
+            >
+              Contact Our Team
+            </motion.a>
+          </motion.div>
+        </div>
+      </div>
+
       {/* CTA Section */}
       <div className="py-20 bg-gradient-to-b from-[var(--card-background)] to-[var(--brand-primary)] relative overflow-hidden">
         {/* Background Elements */}
