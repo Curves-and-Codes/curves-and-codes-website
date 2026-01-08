@@ -426,36 +426,137 @@ function Product() {
       </AnimatePresence>
 
       {/* Features Comparison */}
-      <div className="py-20 bg-gradient-to-b from-[var(--brand-primary)] to-[var(--card-background)]">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Why Our Products Stand Out</h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">Industry-leading features designed for modern enterprises</p>
-          </div>
+      <div className="relative py-28 bg-gradient-to-b from-[var(--brand-primary)] via-gray-900 to-[var(--card-background)] overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute top-20 left-10 w-72 h-72 bg-[var(--brand-secondary)]/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        
+        <div className="relative max-w-7xl mx-auto px-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="text-center mb-20"
+          >
+            <div className="inline-block mb-4">
+              <span className="px-4 py-2 bg-gradient-to-r from-[var(--brand-secondary)]/20 to-cyan-400/20 text-[var(--brand-secondary)] rounded-full text-sm font-semibold border border-[var(--brand-secondary)]/30">
+                Our Advantages
+              </span>
+            </div>
+            <h2 className="text-5xl md:text-6xl font-extrabold text-white mb-5 leading-tight">
+              Why Our Products <br />
+              <span className="bg-gradient-to-r from-[var(--brand-secondary)] via-cyan-400 to-[var(--brand-secondary)] bg-clip-text text-transparent">
+                Stand Out
+              </span>
+            </h2>
+            <p className="text-gray-300 text-xl max-w-3xl mx-auto leading-relaxed">
+              Industry-leading features designed for modern enterprises seeking excellence and innovation
+            </p>
+          </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: "⚡", title: "High Performance", desc: "Optimized for speed and reliability with minimal latency", delay: 0 },
-              { icon: "🔒", title: "Enterprise Security", desc: "Military-grade encryption and compliance with global standards", delay: 0.1 },
-              { icon: "📈", title: "Infinitely Scalable", desc: "Grow your operations without worrying about infrastructure limits", delay: 0.2 },
-              { icon: "🤝", title: "24/7 Expert Support", desc: "Dedicated support team available round the clock for assistance", delay: 0.3 }
+              { 
+                icon: "⚡", 
+                title: "High Performance", 
+                desc: "Optimized for speed and reliability with minimal latency and maximum throughput", 
+                delay: 0,
+                color: "from-yellow-500/20 to-orange-500/20"
+              },
+              { 
+                icon: "🔒", 
+                title: "Enterprise Security", 
+                desc: "Military-grade encryption and compliance with global standards including SOC 2 and ISO 27001", 
+                delay: 0.15,
+                color: "from-blue-500/20 to-purple-500/20"
+              },
+              { 
+                icon: "📈", 
+                title: "Infinitely Scalable", 
+                desc: "Grow your operations seamlessly without worrying about infrastructure limits", 
+                delay: 0.3,
+                color: "from-green-500/20 to-emerald-500/20"
+              },
+              { 
+                icon: "🤝", 
+                title: "24/7 Expert Support", 
+                desc: "Dedicated support team available round the clock with average response time under 5 minutes", 
+                delay: 0.45,
+                color: "from-pink-500/20 to-rose-500/20"
+              }
             ].map((feature, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: feature.delay }}
+                transition={{ duration: 0.7, delay: feature.delay, ease: "easeOut" }}
                 viewport={{ once: true }}
-                className="group relative p-6 rounded-xl bg-gradient-to-br from-white/5 to-white/0 border border-white/10 hover:border-[var(--brand-secondary)]/50 transition-all duration-300 hover:bg-gradient-to-br hover:from-[var(--brand-secondary)]/10 hover:to-white/5"
+                whileHover={{ y: -8, scale: 1.02 }}
+                className="group relative"
               >
-                <div className="w-14 h-14 bg-gradient-to-br from-[var(--brand-secondary)]/20 to-cyan-400/10 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:from-[var(--brand-secondary)]/40 group-hover:to-cyan-400/20 transition-all">
-                  <span className="text-2xl">{feature.icon}</span>
+                {/* Card */}
+                <div className="relative h-full p-8 rounded-2xl bg-gradient-to-br from-white/5 via-white/[0.02] to-transparent border border-white/10 hover:border-[var(--brand-secondary)]/60 transition-all duration-500 backdrop-blur-sm overflow-hidden">
+                  {/* Hover gradient overlay */}
+                  <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-br ${feature.color} transition-opacity duration-500 -z-10`}></div>
+                  
+                  {/* Glow effect on hover */}
+                  <div className="absolute -inset-1 bg-gradient-to-r from-[var(--brand-secondary)] to-cyan-400 rounded-2xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500 -z-10"></div>
+                  
+                  {/* Icon */}
+                  <motion.div 
+                    whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.1 }}
+                    transition={{ duration: 0.5 }}
+                    className="relative w-16 h-16 mb-6 mx-auto"
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-[var(--brand-secondary)] to-cyan-400 rounded-2xl opacity-20 blur-lg group-hover:opacity-40 transition-opacity"></div>
+                    <div className="relative w-full h-full bg-gradient-to-br from-[var(--brand-secondary)]/30 to-cyan-400/20 rounded-xl flex items-center justify-center border border-[var(--brand-secondary)]/30 group-hover:border-[var(--brand-secondary)]/60 transition-all">
+                      <span className="text-3xl">{feature.icon}</span>
+                    </div>
+                  </motion.div>
+                  
+                  {/* Content */}
+                  <h3 className="text-xl font-bold text-white mb-3 text-center group-hover:text-[var(--brand-secondary)] transition-colors duration-300">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-400 text-sm text-center group-hover:text-gray-300 transition-colors leading-relaxed">
+                    {feature.desc}
+                  </p>
+                  
+                  {/* Bottom accent line */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[var(--brand-secondary)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-3 text-center group-hover:text-[var(--brand-secondary)] transition-colors">{feature.title}</h3>
-                <p className="text-gray-400 text-sm text-center group-hover:text-gray-300 transition-colors leading-relaxed">{feature.desc}</p>
               </motion.div>
             ))}
           </div>
+
+          {/* Additional Stats Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.5 }}
+            viewport={{ once: true }}
+            className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
+          >
+            {[
+              { value: "99.99%", label: "Uptime SLA" },
+              { value: "500K+", label: "Active Users" },
+              { value: "150+", label: "Countries" },
+              { value: "24/7", label: "Support" }
+            ].map((stat, idx) => (
+              <div key={idx} className="text-center group cursor-pointer">
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  className="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-[var(--brand-secondary)] to-cyan-400 bg-clip-text text-transparent mb-2"
+                >
+                  {stat.value}
+                </motion.div>
+                <div className="text-gray-400 text-sm font-medium group-hover:text-gray-300 transition-colors">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </div>
 
