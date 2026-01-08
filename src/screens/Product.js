@@ -98,19 +98,20 @@ function Product() {
       </div>
 
       {/* Category Filter */}
-      <div className="py-12 bg-[var(--card-background)]">
+      <div className="py-14 bg-gradient-to-b from-[var(--card-background)] to-[var(--brand-primary)]">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="flex flex-wrap justify-center gap-4">
+          <h3 className="text-center text-gray-400 text-sm font-semibold uppercase tracking-widest mb-6">Filter by Category</h3>
+          <div className="flex flex-wrap justify-center gap-3">
             {categories.map((category) => (
               <motion.button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.08 }}
                 whileTap={{ scale: 0.95 }}
                 className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                   selectedCategory === category
-                    ? "bg-[var(--brand-secondary)] text-[var(--brand-primary)]"
-                    : "bg-white/10 text-white hover:bg-white/20"
+                    ? "bg-gradient-to-r from-[var(--brand-secondary)] to-cyan-400 text-[var(--brand-primary)] shadow-lg shadow-[var(--brand-secondary)]/50 border border-[var(--brand-secondary)]/50"
+                    : "bg-white/5 text-white hover:bg-white/10 border border-white/10 hover:border-[var(--brand-secondary)]/30"
                 }`}
               >
                 {category}
@@ -207,66 +208,35 @@ function Product() {
       </div>
 
       {/* Features Comparison */}
-      <div className="py-16 bg-[var(--card-background)]">
+      <div className="py-20 bg-gradient-to-b from-[var(--brand-primary)] to-[var(--card-background)]">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">Why Our Products Stand Out</h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">Why Our Products Stand Out</h2>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">Industry-leading features designed for modern enterprises</p>
+          </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <div className="w-16 h-16 bg-[var(--brand-secondary)] rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">⚡</span>
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">High Performance</h3>
-              <p className="text-gray-300 text-sm">Optimized for speed and reliability with minimal latency</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <div className="w-16 h-16 bg-[var(--brand-secondary)] rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🔒</span>
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">Enterprise Security</h3>
-              <p className="text-gray-300 text-sm">Military-grade encryption and compliance with global standards</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <div className="w-16 h-16 bg-[var(--brand-secondary)] rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">📈</span>
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">Scalable</h3>
-              <p className="text-gray-300 text-sm">Grow your operations without worrying about infrastructure limits</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <div className="w-16 h-16 bg-[var(--brand-secondary)] rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🤝</span>
-              </div>
-              <h3 className="text-lg font-semibold text-white mb-2">24/7 Support</h3>
-              <p className="text-gray-300 text-sm">Dedicated support team available round the clock</p>
-            </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: "⚡", title: "High Performance", desc: "Optimized for speed and reliability with minimal latency", delay: 0 },
+              { icon: "🔒", title: "Enterprise Security", desc: "Military-grade encryption and compliance with global standards", delay: 0.1 },
+              { icon: "📈", title: "Infinitely Scalable", desc: "Grow your operations without worrying about infrastructure limits", delay: 0.2 },
+              { icon: "🤝", title: "24/7 Expert Support", desc: "Dedicated support team available round the clock for assistance", delay: 0.3 }
+            ].map((feature, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: feature.delay }}
+                viewport={{ once: true }}
+                className="group relative p-6 rounded-xl bg-gradient-to-br from-white/5 to-white/0 border border-white/10 hover:border-[var(--brand-secondary)]/50 transition-all duration-300 hover:bg-gradient-to-br hover:from-[var(--brand-secondary)]/10 hover:to-white/5"
+              >
+                <div className="w-14 h-14 bg-gradient-to-br from-[var(--brand-secondary)]/20 to-cyan-400/10 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:from-[var(--brand-secondary)]/40 group-hover:to-cyan-400/20 transition-all">
+                  <span className="text-2xl">{feature.icon}</span>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-3 text-center group-hover:text-[var(--brand-secondary)] transition-colors">{feature.title}</h3>
+                <p className="text-gray-400 text-sm text-center group-hover:text-gray-300 transition-colors leading-relaxed">{feature.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
