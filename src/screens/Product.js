@@ -24,7 +24,22 @@ function Product() {
         "Custom model training available",
         "Cloud and edge deployment options"
       ],
-      useCases: [,
+      useCases: [
+        "Quality control in manufacturing",
+        "Retail analytics and customer insights",
+        "Traffic monitoring and smart cities",
+        "Security threat detection"
+      ],
+      pricing: "Starting at $2,999/month"
+    },
+    {
+      id: 2,
+      title: "Smart Surveillance Suite",
+      category: "Security",
+      image: "https://images.unsplash.com/photo-1589361194805-49a74dc54e97?q=80&w=800&auto=format&fit=crop",
+      description: "Comprehensive surveillance system with AI-enabled threat detection and intelligent monitoring",
+      features: ["24/7 Monitoring", "Alert System", "Cloud Storage"],
+      badge: "Pro",
       fullDescription: "Our Smart Surveillance Suite provides enterprise-grade security monitoring with AI-powered threat detection. Seamlessly integrate multiple camera sources and get instant alerts for suspicious activities.",
       specifications: [
         "Support for 500+ cameras per system",
@@ -40,15 +55,15 @@ function Product() {
         "Perimeter security for industrial sites"
       ],
       pricing: "Starting at $1,499/month"
-        "Quality control in manufacturing",
-        "Retail analytics and customer insights",
-        "Traffic monitoring and smart cities",
-        "Security threat detection"
-      ],
-      pricing: "Starting at $2,999/month"
     },
     {
-      id: 2,,
+      id: 3,
+      title: "IoT Infrastructure Hub",
+      category: "Infrastructure",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+      description: "Unified IoT device management and smart infrastructure orchestration for seamless connectivity",
+      features: ["Device Management", "Real-time Sync", "Scalable"],
+      badge: "Enterprise",
       fullDescription: "Manage thousands of IoT devices from a single, unified platform. Our Infrastructure Hub provides real-time monitoring, automated updates, and seamless integration with your existing IT infrastructure.",
       specifications: [
         "Manage up to 100,000 devices",
@@ -57,7 +72,22 @@ function Product() {
         "Multi-protocol support (MQTT, CoAP, HTTP)",
         "Advanced analytics and reporting"
       ],
-      useCases: [,
+      useCases: [
+        "Smart building automation",
+        "Industrial IoT deployments",
+        "Connected vehicle fleets",
+        "Smart city infrastructure"
+      ],
+      pricing: "Starting at $3,999/month"
+    },
+    {
+      id: 4,
+      title: "SmartOps Dashboard",
+      category: "Operations",
+      image: "https://images.unsplash.com/photo-1633356122544-f134324ef6db?q=80&w=800&auto=format&fit=crop",
+      description: "Comprehensive operational dashboard for Industry 4.0 insights with real-time analytics",
+      features: ["Analytics", "KPI Tracking", "Automation"],
+      badge: "Pro",
       fullDescription: "Transform your operations with real-time insights and automation. SmartOps Dashboard brings together all your operational data in one intuitive interface, enabling data-driven decision making.",
       specifications: [
         "Customizable dashboards and widgets",
@@ -73,15 +103,15 @@ function Product() {
         "Fleet and logistics management"
       ],
       pricing: "Starting at $899/month"
-        "Smart building automation",
-        "Industrial IoT deployments",
-        "Connected vehicle fleets",
-        "Smart city infrastructure"
-      ],
-      pricing: "Starting at $3,999/month"
-      title: "Smart Surveillance Suite",
+    },
+    {
+      id: 5,
+      title: "Access Control System",
       category: "Security",
-      image: "https://i,
+      image: "https://images.unsplash.com/photo-1614064641938-3bbee52b8b93?q=80&w=800&auto=format&fit=crop",
+      description: "Biometric and credential-based access management with multi-factor authentication",
+      features: ["Biometric Auth", "Multi-factor", "Audit Logs"],
+      badge: "Standard",
       fullDescription: "Secure your facilities with our advanced Access Control System featuring biometric authentication, mobile credentials, and comprehensive audit trails. Easy to deploy and manage.",
       specifications: [
         "Support for facial recognition, fingerprint, and card readers",
@@ -90,7 +120,22 @@ function Product() {
         "Multi-site management from single platform",
         "Integration with HR and directory services"
       ],
-      useCases: [,
+      useCases: [
+        "Corporate office access control",
+        "Data center security",
+        "Hospital and healthcare facilities",
+        "Educational institution security"
+      ],
+      pricing: "Starting at $599/month"
+    },
+    {
+      id: 6,
+      title: "Cloud Infrastructure",
+      category: "Infrastructure",
+      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
+      description: "Scalable cloud solutions with enterprise-grade security and 99.99% uptime guarantee",
+      features: ["Auto-scaling", "99.99% Uptime", "Compliance"],
+      badge: "Enterprise",
       fullDescription: "Build and scale your applications on our robust cloud infrastructure. With guaranteed 99.99% uptime and enterprise-grade security, focus on innovation while we handle the infrastructure.",
       specifications: [
         "99.99% uptime SLA",
@@ -106,52 +151,7 @@ function Product() {
         "Development and testing environments"
       ],
       pricing: "Starting at $1,999/month"
-        "Corporate office access control",
-        "Data center security",
-        "Hospital and healthcare facilities",
-        "Educational institution security"
-      ],
-      pricing: "Starting at $599/month"mages.unsplash.com/photo-1589361194805-49a74dc54e97?q=80&w=800&auto=format&fit=crop",
-      description: "Comprehensive surveillance system with AI-enabled threat detection and intelligent monitoring",
-      features: ["24/7 Monitoring", "Alert System", "Cloud Storage"],
-      badge: "Pro"
-    },
-    {
-      id: 3,
-      title: "IoT Infrastructure Hub",
-      category: "Infrastructure",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
-      description: "Unified IoT device management and smart infrastructure orchestration for seamless connectivity",
-      features: ["Device Management", "Real-time Sync", "Scalable"],
-      badge: "Enterprise"
-    },
-    {
-      id: 4,
-      title: "SmartOps Dashboard",
-      category: "Operations",
-      image: "https://images.unsplash.com/photo-1633356122544-f134324ef6db?q=80&w=800&auto=format&fit=crop",
-      description: "Comprehensive operational dashboard for Industry 4.0 insights with real-time analytics",
-      features: ["Analytics", "KPI Tracking", "Automation"],
-      badge: "Pro"
-    },
-    {
-      id: 5,
-      title: "Access Control System",
-      category: "Security",
-      image: "https://images.unsplash.com/photo-1614064641938-3bbee52b8b93?q=80&w=800&auto=format&fit=crop",
-      description: "Biometric and credential-based access management with multi-factor authentication",
-      features: ["Biometric Auth", "Multi-factor", "Audit Logs"],
-      badge: "Standard"
-    },
-    {
-      id: 6,
-      title: "Cloud Infrastructure",
-      category: "Infrastructure",
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
-      description: "Scalable cloud solutions with enterprise-grade security and 99.99% uptime guarantee",
-      features: ["Auto-scaling", "99.99% Uptime", "Compliance"],
-      badge: "Enterprise"
-    },
+    }
   ];
 
   const categories = ["All", "AI Solutions", "Security", "Infrastructure", "Operations"];
@@ -239,7 +239,52 @@ function Product() {
                     {/* Image Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
                     
-                    {/onClick={() => setSelectedProduct(product)}
+                    {/* Badge */}
+                    <div className="absolute top-4 right-4">
+                      <motion.span 
+                        whileHover={{ scale: 1.1 }}
+                        className={`px-4 py-2 rounded-full text-xs font-bold backdrop-blur-sm ${
+                          product.badge === "Enterprise" 
+                            ? "bg-[var(--brand-secondary)]/90 text-[var(--brand-primary)] shadow-lg shadow-[var(--brand-secondary)]/50"
+                            : product.badge === "Pro"
+                            ? "bg-blue-500/90 text-white shadow-lg shadow-blue-500/50"
+                            : "bg-gray-600/90 text-white shadow-lg shadow-gray-600/50"
+                        }`}
+                      >
+                        {product.badge}
+                      </motion.span>
+                    </div>
+                  </div>
+
+                  {/* Content Section */}
+                  <div className="relative w-full h-1/3 p-5 flex flex-col justify-between">
+                    <div>
+                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[var(--brand-secondary)] transition-colors duration-300">
+                        {product.title}
+                      </h3>
+                      <p className="text-xs text-gray-400 mb-4 leading-relaxed line-clamp-2 group-hover:text-gray-300 transition-colors">
+                        {product.description}
+                      </p>
+                    </div>
+                    
+                    {/* Features */}
+                    <div className="flex flex-wrap gap-2">
+                      {product.features.map((feature, idx) => (
+                        <motion.span 
+                          key={idx}
+                          whileHover={{ scale: 1.05 }}
+                          className="text-xs bg-gradient-to-r from-[var(--brand-secondary)]/20 to-transparent text-[var(--brand-secondary)] px-3 py-1 rounded-full border border-[var(--brand-secondary)]/30 hover:border-[var(--brand-secondary)]/60 transition-all"
+                        >
+                          {feature}
+                        </motion.span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Hover CTA Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-center justify-center rounded-2xl backdrop-blur-sm">
+                    <motion.button
+                      onClick={() => setSelectedProduct(product)}
                       whileHover={{ scale: 1.08 }}
                       whileTap={{ scale: 0.92 }}
                       className="px-8 py-3 bg-gradient-to-r from-[var(--brand-secondary)] to-cyan-400 text-[var(--brand-primary)] font-bold rounded-xl hover:opacity-90 transition shadow-lg shadow-[var(--brand-secondary)]/50"
@@ -378,52 +423,7 @@ function Product() {
             </motion.div>
           </motion.div>
         )}
-      </AnimatePresence             {product.badge}
-                      </motion.span>
-                    </div>
-                  </div>
-
-                  {/* Content Section */}
-                  <div className="relative w-full h-1/3 p-5 flex flex-col justify-between">
-                    <div>
-                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[var(--brand-secondary)] transition-colors duration-300">
-                        {product.title}
-                      </h3>
-                      <p className="text-xs text-gray-400 mb-4 leading-relaxed line-clamp-2 group-hover:text-gray-300 transition-colors">
-                        {product.description}
-                      </p>
-                    </div>
-                    
-                    {/* Features */}
-                    <div className="flex flex-wrap gap-2">
-                      {product.features.map((feature, idx) => (
-                        <motion.span 
-                          key={idx}
-                          whileHover={{ scale: 1.05 }}
-                          className="text-xs bg-gradient-to-r from-[var(--brand-secondary)]/20 to-transparent text-[var(--brand-secondary)] px-3 py-1 rounded-full border border-[var(--brand-secondary)]/30 hover:border-[var(--brand-secondary)]/60 transition-all"
-                        >
-                          {feature}
-                        </motion.span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Hover CTA Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-center justify-center rounded-2xl backdrop-blur-sm">
-                    <motion.button
-                      whileHover={{ scale: 1.08 }}
-                      whileTap={{ scale: 0.92 }}
-                      className="px-8 py-3 bg-gradient-to-r from-[var(--brand-secondary)] to-cyan-400 text-[var(--brand-primary)] font-bold rounded-xl hover:opacity-90 transition shadow-lg shadow-[var(--brand-secondary)]/50"
-                    >
-                      Learn More
-                    </motion.button>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </div>
+      </AnimatePresence>
 
       {/* Features Comparison */}
       <div className="py-20 bg-gradient-to-b from-[var(--brand-primary)] to-[var(--card-background)]">
