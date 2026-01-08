@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import BouncyText from "../components/BouncyText";
 import ProductCard from "../components/Cards/ProductCard";
 
 function Product() {
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   const products = [
     {
@@ -14,13 +15,103 @@ function Product() {
       image: "https://images.unsplash.com/photo-1676933162740-0d8f1f3c8b6f?q=80&w=800&auto=format&fit=crop",
       description: "Advanced computer vision and AI-powered image analysis for real-time insights and automated decision-making",
       features: ["Object Detection", "Real-time Analysis", "ML Integration"],
-      badge: "Enterprise"
+      badge: "Enterprise",
+      fullDescription: "KEYE Vision AI is our flagship computer vision platform that combines cutting-edge AI algorithms with real-time processing capabilities. Perfect for manufacturing, retail, and smart city applications.",
+      specifications: [
+        "99.9% accuracy in object detection",
+        "Real-time processing up to 60 FPS",
+        "Support for 50+ object categories",
+        "Custom model training available",
+        "Cloud and edge deployment options"
+      ],
+      useCases: [,
+      fullDescription: "Our Smart Surveillance Suite provides enterprise-grade security monitoring with AI-powered threat detection. Seamlessly integrate multiple camera sources and get instant alerts for suspicious activities.",
+      specifications: [
+        "Support for 500+ cameras per system",
+        "AI-powered anomaly detection",
+        "Encrypted cloud storage with 90-day retention",
+        "Mobile app for remote monitoring",
+        "Integration with existing security systems"
+      ],
+      useCases: [
+        "Corporate campus security",
+        "Retail loss prevention",
+        "Government facility monitoring",
+        "Perimeter security for industrial sites"
+      ],
+      pricing: "Starting at $1,499/month"
+        "Quality control in manufacturing",
+        "Retail analytics and customer insights",
+        "Traffic monitoring and smart cities",
+        "Security threat detection"
+      ],
+      pricing: "Starting at $2,999/month"
     },
     {
-      id: 2,
+      id: 2,,
+      fullDescription: "Manage thousands of IoT devices from a single, unified platform. Our Infrastructure Hub provides real-time monitoring, automated updates, and seamless integration with your existing IT infrastructure.",
+      specifications: [
+        "Manage up to 100,000 devices",
+        "Real-time device health monitoring",
+        "Over-the-air firmware updates",
+        "Multi-protocol support (MQTT, CoAP, HTTP)",
+        "Advanced analytics and reporting"
+      ],
+      useCases: [,
+      fullDescription: "Transform your operations with real-time insights and automation. SmartOps Dashboard brings together all your operational data in one intuitive interface, enabling data-driven decision making.",
+      specifications: [
+        "Customizable dashboards and widgets",
+        "Real-time data visualization",
+        "Advanced predictive analytics",
+        "Automated reporting and alerts",
+        "Integration with 100+ business tools"
+      ],
+      useCases: [
+        "Manufacturing operations monitoring",
+        "Supply chain optimization",
+        "Energy management and optimization",
+        "Fleet and logistics management"
+      ],
+      pricing: "Starting at $899/month"
+        "Smart building automation",
+        "Industrial IoT deployments",
+        "Connected vehicle fleets",
+        "Smart city infrastructure"
+      ],
+      pricing: "Starting at $3,999/month"
       title: "Smart Surveillance Suite",
       category: "Security",
-      image: "https://images.unsplash.com/photo-1589361194805-49a74dc54e97?q=80&w=800&auto=format&fit=crop",
+      image: "https://i,
+      fullDescription: "Secure your facilities with our advanced Access Control System featuring biometric authentication, mobile credentials, and comprehensive audit trails. Easy to deploy and manage.",
+      specifications: [
+        "Support for facial recognition, fingerprint, and card readers",
+        "Mobile credential support (iOS & Android)",
+        "Real-time access logs and alerts",
+        "Multi-site management from single platform",
+        "Integration with HR and directory services"
+      ],
+      useCases: [,
+      fullDescription: "Build and scale your applications on our robust cloud infrastructure. With guaranteed 99.99% uptime and enterprise-grade security, focus on innovation while we handle the infrastructure.",
+      specifications: [
+        "99.99% uptime SLA",
+        "Auto-scaling and load balancing",
+        "Global CDN with 100+ edge locations",
+        "SOC 2, ISO 27001, HIPAA compliant",
+        "24/7 monitoring and support"
+      ],
+      useCases: [
+        "Web and mobile application hosting",
+        "Data analytics and processing",
+        "Disaster recovery and backup",
+        "Development and testing environments"
+      ],
+      pricing: "Starting at $1,999/month"
+        "Corporate office access control",
+        "Data center security",
+        "Hospital and healthcare facilities",
+        "Educational institution security"
+      ],
+      pricing: "Starting at $599/month"mages.unsplash.com/photo-1589361194805-49a74dc54e97?q=80&w=800&auto=format&fit=crop",
       description: "Comprehensive surveillance system with AI-enabled threat detection and intelligent monitoring",
       features: ["24/7 Monitoring", "Alert System", "Cloud Storage"],
       badge: "Pro"
@@ -148,19 +239,146 @@ function Product() {
                     {/* Image Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"></div>
                     
-                    {/* Badge */}
-                    <div className="absolute top-4 right-4">
-                      <motion.span 
-                        whileHover={{ scale: 1.1 }}
-                        className={`px-4 py-2 rounded-full text-xs font-bold backdrop-blur-sm ${
-                          product.badge === "Enterprise" 
-                            ? "bg-[var(--brand-secondary)]/90 text-[var(--brand-primary)] shadow-lg shadow-[var(--brand-secondary)]/50"
-                            : product.badge === "Pro"
-                            ? "bg-blue-500/90 text-white shadow-lg shadow-blue-500/50"
-                            : "bg-gray-600/90 text-white shadow-lg shadow-gray-600/50"
-                        }`}
+                    {/onClick={() => setSelectedProduct(product)}
+                      whileHover={{ scale: 1.08 }}
+                      whileTap={{ scale: 0.92 }}
+                      className="px-8 py-3 bg-gradient-to-r from-[var(--brand-secondary)] to-cyan-400 text-[var(--brand-primary)] font-bold rounded-xl hover:opacity-90 transition shadow-lg shadow-[var(--brand-secondary)]/50"
+                    >
+                      Learn More
+                    </motion.button>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Product Details Modal */}
+      <AnimatePresence>
+        {selectedProduct && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedProduct(null)}
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 overflow-y-auto"
+          >
+            <motion.div
+              initial={{ scale: 0.9, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.9, y: 20 }}
+              onClick={(e) => e.stopPropagation()}
+              className="bg-gradient-to-b from-[var(--card-background)] to-gray-900 rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-white/10 shadow-2xl"
+            >
+              {/* Modal Header */}
+              <div className="relative h-64 overflow-hidden rounded-t-2xl">
+                <img
+                  src={selectedProduct.image}
+                  alt={selectedProduct.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+                
+                <button
+                  onClick={() => setSelectedProduct(null)}
+                  className="absolute top-4 right-4 w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white text-xl transition-all"
+                >
+                  ×
+                </button>
+
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <span className={`inline-block px-4 py-2 rounded-full text-xs font-bold mb-3 ${
+                    selectedProduct.badge === "Enterprise" 
+                      ? "bg-[var(--brand-secondary)]/90 text-[var(--brand-primary)]"
+                      : selectedProduct.badge === "Pro"
+                      ? "bg-blue-500/90 text-white"
+                      : "bg-gray-600/90 text-white"
+                  }`}>
+                    {selectedProduct.badge}
+                  </span>
+                  <h2 className="text-3xl font-bold text-white">{selectedProduct.title}</h2>
+                  <p className="text-gray-300 mt-2">{selectedProduct.description}</p>
+                </div>
+              </div>
+
+              {/* Modal Content */}
+              <div className="p-8 space-y-8">
+                {/* Full Description */}
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-3">Overview</h3>
+                  <p className="text-gray-300 leading-relaxed">{selectedProduct.fullDescription}</p>
+                </div>
+
+                {/* Key Features */}
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-3">Key Features</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedProduct.features.map((feature, idx) => (
+                      <span key={idx} className="px-4 py-2 bg-gradient-to-r from-[var(--brand-secondary)]/20 to-transparent text-[var(--brand-secondary)] rounded-full border border-[var(--brand-secondary)]/30 text-sm">
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Specifications */}
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-3">Technical Specifications</h3>
+                  <ul className="space-y-2">
+                    {selectedProduct.specifications.map((spec, idx) => (
+                      <li key={idx} className="flex items-start text-gray-300">
+                        <span className="text-[var(--brand-secondary)] mr-2 mt-1">✓</span>
+                        <span>{spec}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Use Cases */}
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-3">Use Cases</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {selectedProduct.useCases.map((useCase, idx) => (
+                      <div key={idx} className="p-3 bg-white/5 rounded-lg border border-white/10">
+                        <p className="text-gray-300 text-sm">{useCase}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Pricing */}
+                <div className="border-t border-white/10 pt-6">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-gray-400 text-sm mb-1">Pricing</p>
+                      <p className="text-2xl font-bold text-white">{selectedProduct.pricing}</p>
+                    </div>
+                    <div className="flex gap-3">
+                      <motion.a
+                        href="/contact"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="px-6 py-3 bg-gradient-to-r from-[var(--brand-secondary)] to-cyan-400 text-[var(--brand-primary)] font-bold rounded-lg shadow-lg shadow-[var(--brand-secondary)]/40"
                       >
-                        {product.badge}
+                        Get Started
+                      </motion.a>
+                      <motion.a
+                        href="/contact"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="px-6 py-3 border-2 border-white/20 text-white font-semibold rounded-lg hover:border-[var(--brand-secondary)]"
+                      >
+                        Contact Sales
+                      </motion.a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence             {product.badge}
                       </motion.span>
                     </div>
                   </div>
@@ -242,29 +460,44 @@ function Product() {
       </div>
 
       {/* CTA Section */}
-      <div className="py-16 bg-gradient-to-r from-[var(--brand-primary)] to-gray-800">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Transform Your Business?</h2>
-          <p className="text-lg text-gray-300 mb-8">Choose the perfect product for your needs and get started today.</p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <motion.a
-              href="/contact"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center justify-center rounded-2xl px-8 py-3 bg-[var(--brand-secondary)] text-[var(--brand-primary)] font-semibold hover:opacity-90 transition"
-            >
-              Request a Demo
-            </motion.a>
-            <motion.a
-              href="/contact"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center justify-center rounded-2xl px-8 py-3 border border-white/20 text-white hover:bg-white/5 transition"
-            >
-              Talk to Sales
-            </motion.a>
-          </div>
+      <div className="py-20 bg-gradient-to-b from-[var(--card-background)] to-[var(--brand-primary)] relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[var(--brand-secondary)]/10 rounded-full blur-3xl opacity-30 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl opacity-30 pointer-events-none"></div>
+        
+        <div className="relative max-w-4xl mx-auto px-6 text-center z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-5 leading-tight">
+              Ready to Transform Your <span className="bg-gradient-to-r from-[var(--brand-secondary)] to-cyan-400 bg-clip-text text-transparent">Business?</span>
+            </h2>
+            <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+              Choose the perfect product for your needs and get started today. Our experts are ready to help you succeed.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <motion.a
+                href="/contact"
+                whileHover={{ scale: 1.08, y: -3 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center justify-center rounded-xl px-8 py-4 bg-gradient-to-r from-[var(--brand-secondary)] to-cyan-400 text-[var(--brand-primary)] font-bold text-lg shadow-lg shadow-[var(--brand-secondary)]/40 hover:shadow-[var(--brand-secondary)]/60 transition-all duration-300"
+              >
+                Request a Demo
+              </motion.a>
+              <motion.a
+                href="/contact"
+                whileHover={{ scale: 1.08, y: -3 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-flex items-center justify-center rounded-xl px-8 py-4 border-2 border-white/20 text-white font-bold text-lg hover:border-[var(--brand-secondary)] hover:bg-[var(--brand-secondary)]/5 transition-all duration-300"
+              >
+                Talk to Sales
+              </motion.a>
+            </div>
+          </motion.div>
         </div>
       </div>
     </div>
