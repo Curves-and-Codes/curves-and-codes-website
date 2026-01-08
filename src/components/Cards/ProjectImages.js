@@ -1,6 +1,23 @@
 import React from "react";
 import { motion } from "framer-motion";
-const ProjectImages = () => {
+
+const imageData = {
+  surveillance: {
+    main: "https://images.unsplash.com/photo-1589361194805-49a74dc54e97?q=80&w=800&auto=format&fit=crop",
+    topLeft: "https://images.unsplash.com/photo-1557324232-b8917d3c3dcb?q=80&w=800&auto=format&fit=crop",
+    bottomRight: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop",
+    extra: "https://images.unsplash.com/photo-1516321318423-f06f70504c8a?q=80&w=800&auto=format&fit=crop"
+  },
+  iot: {
+    main: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=800&auto=format&fit=crop",
+    topLeft: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
+    bottomRight: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=800&auto=format&fit=crop",
+    extra: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&w=800&auto=format&fit=crop"
+  }
+};
+
+const ProjectImages = ({ imageType = "surveillance" }) => {
+  const images = imageData[imageType] || imageData.surveillance;
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -27,9 +44,9 @@ const ProjectImages = () => {
           }}
         >
           <img
-            src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop"
+            src={images.main}
             alt="Main Project"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
             // Add an onerror handler as a best practice for external images
             onError={(e) => {
               e.target.src =
@@ -49,9 +66,9 @@ const ProjectImages = () => {
           }}
         >
           <img
-            src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop"
-            className="w-full h-full object-cover"
-            alt="Small Top Left"
+            src={images.topLeft}
+            className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
+            alt="Smart Technology"
             onError={(e) => {
               e.target.src =
                 "https://placehold.co/800x600/06b6d4/ffffff?text=Top+Left";
@@ -70,9 +87,9 @@ const ProjectImages = () => {
           }}
         >
           <img
-            src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=crop"
-            alt="Small Bottom Right"
-            className="w-full h-full object-cover"
+            src={images.bottomRight}
+            alt="Innovation Technology"
+            className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
             onError={(e) => {
               e.target.src =
                 "https://placehold.co/800x600/0891b2/ffffff?text=Bottom+Right";
@@ -91,9 +108,9 @@ const ProjectImages = () => {
           }}
         >
           <img
-            src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop"
-            alt="Small Extra"
-            className="w-full h-full object-cover"
+            src={images.extra}
+            alt="Advanced Solutions"
+            className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
             onError={(e) => {
               e.target.src =
                 "https://placehold.co/800x600/0ea5e9/ffffff?text=Extra";
