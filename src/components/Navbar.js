@@ -4,6 +4,7 @@ import logo from "../assests/images/logo.png";
 import "./css/navBar.css";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
+
 // Navigation config
 const navLinks = [
   { name: "Home", path: "/" },
@@ -16,6 +17,7 @@ const navLinks = [
       { name: "App Development", path: "/services/app-dev" },
     ],
   },
+  { name: "Products", path: "/Product" },
   { name: "Contact Us", path: "/contact" },
 ];
 

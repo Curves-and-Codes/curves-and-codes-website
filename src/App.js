@@ -6,6 +6,7 @@ import About from './screens/About';
 import NotFound from './screens/NotFound';
 import Services from './screens/Services';
 import ContactUs from './screens/ContactUs';
+import Product from './screens/Product';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         <Route path="home" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="services" element={<Services />} />
+        <Route path="Product" element={<Product/>} />
         <Route path="contact" element={<ContactUs />} />
         <Route path="*" element={<NotFound />} />
       </Route>
