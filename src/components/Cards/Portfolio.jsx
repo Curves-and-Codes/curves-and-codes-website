@@ -1,6 +1,11 @@
+
 import React, { useRef } from 'react';
 import "./portfolio.scss";
 import { useScroll, motion, useSpring, useTransform } from 'framer-motion';
+
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+
 
 const services = [
   {
@@ -41,6 +46,7 @@ const services = [
 ];
 
 
+
 const Single = ({ item }) => {
   const ref = useRef();
   const { scrollYProgress } = useScroll({
@@ -60,14 +66,60 @@ const Single = ({ item }) => {
             <h2>{item.title}</h2>
             <p>{item.description}</p>
             <button>Learn More</button>
-          </motion.div>
+
+const Single = ({ item, index }) => {
+  const ref = useRef();
+  const { scrollYProgress } = useScroll({ target: ref });
+  const y = useTransform(scrollYProgress, [0, 1], [-150, 150]);
+
+  const isOdd = index % 2 != 0;
+
+  return (
+    <section className="h-auto md:h-[80vh] flex items-center justify-center px-4 py-10 md:py-0">
+      <div
+        className={`flex flex-col md:flex-row items-center justify-center gap-10 max-w-[1366px] w-full ${
+          !isOdd ? "md:flex-row-reverse" : ""
+        }`}
+      >
+        {/* Image */}
+        <motion.div
+          ref={ref}
+          // Apply scroll effect only on desktop, no effect on mobile
+          style={{ y: typeof window !== "undefined" && window.innerWidth > 768 ? y : 0 }}
+          className="flex-1 flex justify-center"
+        >
+          <img
+            src={item.image}
+            alt={item.title}
+            className="w-full max-w-[500px] h-64 md:h-80 object-cover rounded-xl shadow-lg hover:scale-105 transition-transform duration-500"
+          />
+        </motion.div>
+
+        {/* Text */}
+        <div className="flex-1 flex flex-col gap-6 text-white p-4 md:p-0 text-center md:text-left ">
+          <h4 className="text-teal-400 font-semibold">{item.category}</h4>
+          <h2 className="text-2xl md:text-4xl font-bold ">
+            {item.title}
+          </h2>
+          <p className="text-base md:text-lg text-gray-200 font-light text-justify leading-relaxed">
+            {item.description}
+          </p>
+          <button className="w-40 md:w-48 px-6 py-2 bg-cyan-500 text-white font-semibold rounded-md hover:bg-cyan-400 transition">
+            Learn More
+          </button>
+
         </div>
       </div>
     </section>
   );
 };
 
+
 function Portfolio() {
+  const ref = useRef();
+
+
+const Portfolio = () => {
   const ref = useRef();
 
   const { scrollYProgress } = useScroll({
@@ -80,17 +132,18 @@ function Portfolio() {
     damping: 30,
   });
 
-  return (
-    <div className="portfolio" ref={ref}>
-      <div className="progress">
-        <h1 className='lg:text-4xl md:text-53xl sm:text-2xl  font-bold text-teal-400'>Our Services</h1>
-        <motion.div style={{ scaleX }} className="progressbar" />
+
+
+    <div className="portfolio relative" ref={ref}>
+      <div className="max-w-6xl mx-auto py-16">
+       
+        {services.map((item, idx) => (
+          <Single key={idx} item={item} index={idx} />
+        ))}
       </div>
-      {services.map((item, idx) => (
-        <Single item={item} key={idx} />
-      ))}
     </div>
   );
-}
+};
+
 
 export default Portfolio;
