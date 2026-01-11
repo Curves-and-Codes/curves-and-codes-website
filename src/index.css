@@ -4,16 +4,14 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 :root {
@@ -22,11 +20,11 @@ code {
   --card-background: rgba(13, 15, 22, 0.9);
   --brand-secondary: #67e8f9; /* cyan-300 */
   --brand-secondary-hover: rgba(34, 211, 238, 0.167); /* cyan-400 with 40% opacity */
-  --brand-accent: #EF0163; /* Vivid magenta/red-pink */
+  --brand-accent: #ef0163; /* Vivid magenta/red-pink */
   --brand-accent-hover: #ff2f7fc1; /* Darker magenta */
 
   /* Neutral Colors */
-  --neutral-gray: #6B7280; /* Medium gray */
+  --neutral-gray: #6b7280; /* Medium gray */
   --neutral-bg-light: #f8fafc; /* Light background (off-white) */
 
   /* Shadows */
@@ -48,7 +46,8 @@ code {
 }
 
 @keyframes float-right-down {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0);
   }
   33% {
@@ -60,7 +59,8 @@ code {
 }
 
 @keyframes float-left-up {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0);
   }
   33% {
@@ -71,6 +71,7 @@ code {
   }
 }
 
+
 .nav-link {
   outline: none;
   border: none;
@@ -80,3 +81,4 @@ code {
   border: none !important;
   box-shadow: none !important;
 }
+

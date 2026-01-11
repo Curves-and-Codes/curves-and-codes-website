@@ -1,5 +1,11 @@
+
+import React, { useRef } from 'react';
+import "./portfolio.scss";
+import { useScroll, motion, useSpring, useTransform } from 'framer-motion';
+
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+
 
 const services = [
   {
@@ -38,6 +44,28 @@ const services = [
     image: "/digital-dashboard-analytics-operations.jpg",
   },
 ];
+
+
+
+const Single = ({ item }) => {
+  const ref = useRef();
+  const { scrollYProgress } = useScroll({
+    target: ref,
+  });
+  const y = useTransform(scrollYProgress,[0, 1], [-300, 300]);
+
+  return (
+    <section>
+      <div className="container">
+        <div className="wrapper">
+          <div className="imgcontainer" ref={ref}>
+            <img src={item.image} alt={item.title} />
+          </div>
+          <motion.div className="textcontainer" style={{ y }}>
+            <h4>{item.category}</h4>
+            <h2>{item.title}</h2>
+            <p>{item.description}</p>
+            <button>Learn More</button>
 
 const Single = ({ item, index }) => {
   const ref = useRef();
@@ -79,14 +107,21 @@ const Single = ({ item, index }) => {
           <button className="w-40 md:w-48 px-6 py-2 bg-cyan-500 text-white font-semibold rounded-md hover:bg-cyan-400 transition">
             Learn More
           </button>
+
         </div>
       </div>
     </section>
   );
 };
 
+
+function Portfolio() {
+  const ref = useRef();
+
+
 const Portfolio = () => {
   const ref = useRef();
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["end end", "start start"],
@@ -97,7 +132,8 @@ const Portfolio = () => {
     damping: 30,
   });
 
-  return (
+
+
     <div className="portfolio relative" ref={ref}>
       <div className="max-w-6xl mx-auto py-16">
        
@@ -108,5 +144,6 @@ const Portfolio = () => {
     </div>
   );
 };
+
 
 export default Portfolio;

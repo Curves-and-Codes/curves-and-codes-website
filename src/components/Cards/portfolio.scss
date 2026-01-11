@@ -1,0 +1,165 @@
+@import "/src//components//Cards//app.scss";
+
+.portfolio {
+  position: relative;
+
+  .progress {
+    position: sticky;
+    padding-top: 15px;
+    top: 0;
+    left: 0;
+    align-items: center;
+    color: #1fadccb7;
+    font-size: 25px;
+    text-align: center;
+
+    @include mobile {
+      position: relative;
+      padding-top: 0;
+    }
+
+
+    h1 {
+      z-index: 99999 !important;
+    }
+
+    @include mobile {
+      padding-top: calc(15vh - 100px);
+      font-size: 20px;
+    }
+
+    .progressbar {
+      margin-bottom: 25px;
+      height: 10px;
+      background-color: rgb(70, 82, 84);
+    }
+  }
+
+  // Reduce vertical gap between cards by adjusting section margins
+  section {
+    margin-bottom: -10px;  // Reduced gap here
+    padding-bottom: 0;
+  }
+
+  .container {
+    padding-right: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    @include mobile {
+      padding-right: 0;
+      margin: 0 auto;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .wrapper {
+      display: flex;
+      max-width: 1366px;
+      height: 100%;
+      margin-left: 150px;
+      gap: 40px;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+
+      @include mobile {
+        flex-direction: column;
+        margin-left: 0 !important;
+        gap: 30px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .imgcontainer {
+        flex: 1;
+        height: 50%;
+
+        @include mobile {
+          width: 100%;
+          max-height: 300px;
+          margin-left: 0;
+        }
+
+        img {
+          width: 90%;
+          height: 90%;
+          object-fit: cover;
+          border-radius: 15px;
+
+          @include mobile {
+            width: 100% !important;
+            height: auto !important;
+            object-fit: contain;
+            margin-left: 0;
+            padding: 5px;
+          }
+        }
+      }
+
+      .textcontainer {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        color: white;
+
+        @include mobile {
+          transform: none !important;
+          padding: 10px;
+          align-items: center;
+          text-align: center;
+          box-sizing: border-box;
+        }
+
+        h2 {
+          text-align: center;
+          font-size: 50px;
+          font-family: "Bodoni Moda", serif;
+          font-optical-sizing: auto;
+          font-weight: 600;
+          font-style: normal;
+
+          @include mobile {
+            font-size: 36px;
+          }
+        }
+
+        p {
+          font-family: "EB Garamond", serif;
+          font-optical-sizing: auto;
+          font-weight: 400;
+          font-style: normal;
+          font-size: 22px;
+          color: rgb(244, 240, 240);
+
+          @include mobile {
+            font-size: 14px;
+          }
+        }
+
+        button {
+          width: 200px;
+          padding: 10px;
+          background-color: #1db5c3;
+          cursor: pointer;
+          color: rgb(20, 19, 19);
+          border: none;
+          font-family: "EB Garamond", serif;
+          font-weight: 600;
+          font-style: normal;
+
+          @include mobile {
+            width: 150px;
+            padding: 8px;
+          }
+        }
+      }
+    }
+  }
+}
