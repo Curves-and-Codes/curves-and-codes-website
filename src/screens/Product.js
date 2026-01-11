@@ -645,7 +645,49 @@ function Product() {
           </div>
         </div>
       </div>
+      
+      {/* Top Companies Carousel */}
+      <div className="py-16 bg-gradient-to-b from-[var(--card-background)] to-[var(--card-background)] overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <span className="px-4 py-2 bg-gradient-to-r from-[var(--brand-secondary)]/20 to-cyan-400/20 text-[var(--brand-secondary)] rounded-full text-sm font-semibold border border-[var(--brand-secondary)]/30 inline-block mb-4">
+              Trusted Partners
+            </span>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Powering <span className="bg-gradient-to-r from-[var(--brand-secondary)] to-cyan-400 bg-clip-text text-transparent">Global Leaders</span>
+            </h2>
+          </motion.div>
 
+          {/* Carousel Container */}
+          <div className="relative">
+            <div className="flex animate-scroll space-x-12 items-center">
+              {[
+                "Microsoft", "Google", "Amazon", "Apple", "Meta", "Tesla", "Netflix", "Spotify",
+                "Adobe", "Salesforce", "Oracle", "IBM", "Intel", "NVIDIA", "Samsung", "Sony"
+              ].concat([
+                "Microsoft", "Google", "Amazon", "Apple", "Meta", "Tesla", "Netflix", "Spotify",
+                "Adobe", "Salesforce", "Oracle", "IBM", "Intel", "NVIDIA", "Samsung", "Sony"
+              ]).map((company, idx) => (
+                <div
+                  key={idx}
+                  className="flex-shrink-0 px-8 py-4 bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 rounded-xl hover:border-[var(--brand-secondary)]/50 transition-all duration-300 group cursor-pointer"
+                >
+                  <span className="text-white font-semibold text-lg whitespace-nowrap group-hover:text-[var(--brand-secondary)] transition-colors">
+                    {company}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+      
       {/* FAQ Section */}
       <div className="py-20 bg-gradient-to-b from-[var(--card-background)] to-[var(--brand-primary)]">
         <div className="max-w-4xl mx-auto px-6">
@@ -789,7 +831,7 @@ function Product() {
           </motion.div>
         </div>
       </div>
-
+      
       {/* CTA Section */}
       <div className="py-20 bg-gradient-to-b from-[var(--card-background)] to-[var(--brand-primary)] relative overflow-hidden">
         {/* Background Elements */}
