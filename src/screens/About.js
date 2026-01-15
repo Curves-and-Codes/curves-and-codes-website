@@ -2,7 +2,7 @@ import React from "react";
 import HexagonGridBgAbout from "../components/backgrounds/HexagonGridBgAbout";
 import AnimatedCanvas from "../components/backgrounds/AnimatedCanvas";
 import BlurryCardWithIcon from "../components/Cards/BlurryCardWithIcon";
-import { LineChart, Shield, Network, Cpu } from "lucide-react";
+import { LineChart, Shield, Network, Cpu, Heart, Users, Handshake } from "lucide-react";
 import BlurryImageCard from "../components/Cards/BlurryImageCard";
 import BouncyText from "../components/BouncyText";
 import JourneyTimeline from "../components/JourneyTimeline";
@@ -124,6 +124,32 @@ function About() {
           <div className="m-10">
            <JourneyTimeline/>
           </div>
+          
+          <div className="m-10">
+            <BouncyText
+              text={`Values & Collaboration`}
+              className="text-2xl sm:text-4xl md:text-5xl text-white  px-4 mt-3 font-extrabold leading-tight text-center  "
+            />
+          </div>
+          
+          <div className="grid gap-6 mt-20 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            <BlurryCardWithIcon
+              title="Innovation First"
+              description="We embrace cutting-edge technology and creative solutions to drive meaningful change."
+              Icon={Heart}
+            />
+            <BlurryCardWithIcon
+              title="Collaborative Spirit"
+              description="Building strong partnerships with clients and stakeholders for shared success."
+              Icon={Users}
+            />
+            <BlurryCardWithIcon
+              title="Trusted Partnerships"
+              description="Long-term relationships built on transparency, reliability, and mutual growth."
+              Icon={Handshake}
+            />
+          </div>
+          
           <div className="m-10">
             <BouncyText
               text={`What We Offer`}
