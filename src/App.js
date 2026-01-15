@@ -1,3 +1,4 @@
+// Main App component - Enhanced routing
 import React from 'react';
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
 import RouteLayout from './components/RouteLayout';
