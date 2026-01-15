@@ -1,3 +1,4 @@
+// Product showcase page - Enhanced UI
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import BouncyText from "../components/BouncyText";
