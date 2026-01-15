@@ -1,3 +1,4 @@
+// Services page - Enhanced technology solutions
 import Portfolio from "../components/Cards/Portfolio"
 import ServicesCarousel1 from "../components/Cards/ServicesCarousel1"
 import HexagonGridBgAbout from "../components/backgrounds/HexagonGridBgAbout"
