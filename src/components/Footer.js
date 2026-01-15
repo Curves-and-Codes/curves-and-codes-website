@@ -1,4 +1,5 @@
 import React from "react";
+// Footer component with enhanced styling
 import logo from "../assests/images/logo.png";
 function Footer() {
   return (
