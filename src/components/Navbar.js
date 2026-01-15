@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import logo from "../assests/images/logo.png";
 import "./css/navBar.css";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import ContactUsModal from "../screens/ContactUsModal";
 
 // Enhanced navigation configuration
 // Navigation config
@@ -12,10 +13,10 @@ const navLinks = [
   {
     name: "Services",
     path: "/services",
-    subPaths: [
-      { name: "Web Development", path: "/services/web-dev" },
-      { name: "App Development", path: "/services/app-dev" },
-    ],
+    // subPaths: [
+    //   { name: "Web Development", path: "/services/web-dev" },
+    //   { name: "App Development", path: "/services/app-dev" },
+    // ],
   },
   { name: "Products", path: "/Product" },
   { name: "Contact Us", path: "/contact" },
@@ -23,16 +24,24 @@ const navLinks = [
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isContactModalOpen, setContactModalOpen] = useState(false);
   const toggleNavbar = () => setIsOpen(!isOpen);
 
   return (
     <>
+
       <nav className="navbar " role="navigation" aria-label="Main navigation">
         <div className="navbar-logo">
           <NavLink to="/" aria-label="Homepage">
             <img src={logo} alt="Logo" />
           </NavLink>
         </div>
+
+      <nav className="navbar">
+        <a href="/" className="navbar-logo">
+          <img src={logo} alt="Logo" />
+        </a>
+
 
         {/* Desktop Links */}
         <ul className="navbar-links">
@@ -71,9 +80,9 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <a
-          href="#"
-          className="group inline-flex items-center gap-2 rounded-xl px-5 py-2 
+        <button
+          onClick={() => setContactModalOpen(true)}
+          className="hidden md:inline-flex group items-center gap-2 rounded-xl px-5 py-2 
              border border-brand-secondary-hover 
              text-brand-secondary 
              hover:bg-brand-secondary-hover 
@@ -93,7 +102,7 @@ const Navbar = () => {
               strokeLinejoin="round"
             />
           </svg>
-        </a>
+        </button>
 
         {/* Mobile Menu Button */}
         <button
@@ -150,7 +159,15 @@ const Navbar = () => {
       </div>
 
       {/* Overlay */}
+
       {isOpen && <div className="overlay" onClick={toggleNavbar} tabIndex={-1}></div>}
+
+      <ContactUsModal
+        isOpen={isContactModalOpen}
+        onClose={() => setContactModalOpen(false)}
+      />
+      {isOpen && <div className="overlay" onClick={toggleNavbar}></div>}
+
     </>
   );
 };

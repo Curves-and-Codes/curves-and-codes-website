@@ -22,22 +22,21 @@ const ProjectImages = ({ imageType = "surveillance" }) => {
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{
-        duration: 0.6,
-        ease: "easeOut",
-        delay: 2 * 0.2, // Adjust delay based on the index of the card instead of hardcoding 2 put index here
-      }}
+      transition={{ duration: 0.6, ease: "easeOut", delay: 2 * 0.2 }}
       viewport={{ once: true }}
-      style={{
-        animation: "float-right-down 4s ease-in-out infinite",
-      }}
-      className="lg:w-[50%] sm:w-full  md:w-full w-[100%]"
+      className="w-full flex justify-center items-center "
     >
-      <div className="relative w-full max-w-4xl mx-auto h-[50vh] md:h-[60vh]">
+      <div className="relative w-full max-w-4xl h-[50vh] md:h-[60vh]">
         {/* Main Rectangle Image */}
         <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg overflow-hidden border-2 z-10 
-                   w-[80%] h-[70%] sm:w-[60%] sm:h-[50%] md:w-[300px] md:h-[200px]"
+          className="
+    absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+    rounded-lg overflow-hidden border-2 z-10
+    w-[80%] h-[60%]    /* default: phones */
+    sm:w-[65%] sm:h-[55%] 
+    md:w-[70%] md:h-[50%] /* tablets (not fixed px) */
+    lg:w-[320px] lg:h-[220px]  /* desktop fixed */
+  "
           style={{
             borderColor: "var(--brand-secondary)",
             boxShadow: "var(--shadow-glow-secondary)",
@@ -60,7 +59,7 @@ const ProjectImages = ({ imageType = "surveillance" }) => {
           className="absolute top-[20%] left-[5%] rounded-lg overflow-hidden z-10
                    w-[30%] h-[25%] sm:w-[30%] sm:h-[30%] md:w-[180px] md:h-[120px] md:top-[10%] md:left-[10%]"
           style={{
-            animation: "float-left-up 4s ease-in-out infinite",
+            // animation: "float-left-up 4s ease-in-out infinite",
             border: "2px solid var(--brand-secondary)",
             boxShadow: "var(--shadow-glow-secondary)",
           }}
@@ -79,9 +78,9 @@ const ProjectImages = ({ imageType = "surveillance" }) => {
         {/* Bottom Right Rectangle */}
         <div
           className="absolute bottom-[10%] right-[5%] rounded-lg overflow-hidden z-10
-                   w-[40%] h-[30%] sm:w-[35%] sm:h-[30%] md:w-[200px] md:h-[130px] md:bottom-[10%] md:right-[20%]"
+                   w-[40%] h-[30%] sm:w-[35%] sm:h-[30%] md:w-[200px] md:h-[130px] md:bottom-[10%] md:right-[10%]"
           style={{
-            animation: "float-right-down 4s ease-in-out infinite",
+            // animation: "float-right-down 4s ease-in-out infinite",
             border: "2px solid var(--brand-secondary)",
             boxShadow: "var(--shadow-glow-secondary)",
           }}
@@ -99,10 +98,10 @@ const ProjectImages = ({ imageType = "surveillance" }) => {
 
         {/* Small Extra Image */}
         <div
-          className="absolute top-[30%] right-[1%] rounded-md overflow-hidden z-30
-                   w-[30%] h-[25%] sm:w-[25%] sm:h-[30%] md:w-[140px] md:h-[100px] md:top-[20%] md:right-[20%]"
+          className="absolute top-[20%] right-[1%] rounded-md overflow-hidden z-30
+                   w-[30%] h-[25%] sm:w-[25%] sm:h-[30%] md:w-[140px] md:h-[100px] md:top-[10%] md:right-[10%]"
           style={{
-            animation: "float-right-down 4s ease-in-out infinite",
+            // animation: "float-right-down 4s ease-in-out infinite",
             border: "2px solid var(--brand-secondary)",
             boxShadow: "var(--shadow-glow-secondary)",
           }}

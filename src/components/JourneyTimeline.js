@@ -1,23 +1,46 @@
 import React from "react";
 
 const journey = [
-  { year: "2010", title: "Founded", desc: "Started with a vision." },
+  { year: "2010-2012", title: "Founded", desc: "Started with a vision." },
+   {
+    year: "2012-2015",
+    title: "Expansion",
+    desc: "Opened new offices globally.",
+  },
+   {
+    year: "2015-2017",
+    title: "Expansion",
+    desc: "Opened new offices globally.",
+  },
   {
-    year: "2011",
+    year: "2017-2019",
     title: "First Project",
     desc: "Delivered milestone project.",
   },
-  { year: "2012", title: "Expansion", desc: "Opened new offices globally." },
-  { year: "2013", title: "Innovation", desc: "Launched AI-driven solutions." },
+  {
+    year: "2019-2022",
+    title: "Expansion",
+    desc: "Opened new offices globally.",
+  },
+  {
+    year: "2022-2024",
+    title: "Innovation",
+    desc: "Launched AI-driven solutions.",
+  },
+  {
+    year: "2024-2025",
+    title: "Innovation",
+    desc: "Launched AI-driven solutions.",
+  },
 ];
 
 function JourneyTimeline() {
   return (
     <div className="w-full py-16 text-white">
-       <div className="hidden md:flex justify-center items-start gap-0">
+      <div className="hidden md:flex justify-center items-start gap-0">
         {journey.map((item, index) => (
           <div key={index} className="relative flex flex-col items-center">
-             <div
+            <div
               className={`w-40 h-40 flex items-center justify-center
                 ${
                   index % 2 === 0
@@ -32,7 +55,7 @@ function JourneyTimeline() {
               </div>
             </div>
 
-               <span
+            <span
               className={`absolute text-white font-semibold ${
                 index % 2 === 0 ? "-top-8" : "-bottom-8"
               }`}
@@ -40,7 +63,7 @@ function JourneyTimeline() {
               {item.year}
             </span>
 
-             <div
+            <div
               className={`absolute bg-cyan-300 rounded-full h-4 w-4 
                 ${
                   index % 2 === 0
@@ -52,10 +75,10 @@ function JourneyTimeline() {
         ))}
       </div>
 
-       <div className="md:hidden flex flex-col items-center">
+      <div className="md:hidden flex flex-col items-center">
         {journey.map((item, index) => (
           <div key={index} className="relative flex flex-col items-center">
-             <div
+            <div
               className={`w-40 h-40 flex items-center justify-center
                 ${
                   index % 2 === 0
@@ -72,7 +95,7 @@ function JourneyTimeline() {
 
             <span
               className={`absolute top-1/2 -translate-y-1/2 font-semibold text-white
-                ${index % 2 === 0 ? "-right-12" : "-left-12"}`}
+                ${index % 2 === 0 ? "-right-24" : "-left-24"}`}
             >
               {item.year}
             </span>

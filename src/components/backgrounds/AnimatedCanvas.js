@@ -68,9 +68,9 @@ function AnimatedCanvas() {
     const blobs = Array.from({ length: 6 }).map(() => ({
       x: Math.random() * w,
       y: Math.random() * h,
-      r: 80 + Math.random() * 120, // 👈 radius range (size of blobs)
-      dx: (Math.random() - 0.5) * 0.5, // 👈 horizontal speed
-      dy: (Math.random() - 0.5) * 0.5, // 👈 vertical speed
+      r: 80 + Math.random() * 125, // 👈 radius range (size of blobs)
+      dx: (Math.random() - 0.5) * 0.6, // 👈 horizontal speed
+      dy: (Math.random() - 0.5) * 0.6, // 👈 vertical speed
       color: withAlpha(
         brandColors[Math.floor(Math.random() * brandColors.length)],
         0.2 // 👈 opacity here (0.1 → very light, 0.4 → more visible)

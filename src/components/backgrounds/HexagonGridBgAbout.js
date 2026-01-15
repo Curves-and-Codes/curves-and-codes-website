@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
+import ContactUsModal from "../../screens/ContactUsModal";
 
 function HexagonGridBgAbout() {
   const [projects, setProjects] = useState(0);
   const [clients, setClients] = useState(0);
   const [countries, setCountries] = useState(0);
+     const [open, setOpen] = useState(false);
 
   useEffect(() => {
     let projectsTarget = 120;
@@ -66,12 +68,12 @@ function HexagonGridBgAbout() {
             communities worldwide.
           </p>
           <div>
-            <a
-              href="#contact"
-              className="inline-block px-6 py-3 text-lg font-semibold bg-[var(--brand-accent)] text-white rounded-xl shadow-lg hover:bg-[var(--brand-accent-hover)] transform hover:scale-105 transition"
+            <button
+             onClick={() => setOpen(true)}
+              className="inline-block px-6 py-2 text-lg font-semibold bg-[var(--brand-accent)] text-white rounded-xl shadow-lg hover:bg-[var(--brand-accent-hover)] transform hover:scale-105 transition"
             >
               Contact Us
-            </a>
+            </button>
           </div>
         </div>
 
@@ -107,6 +109,7 @@ function HexagonGridBgAbout() {
           </ul>
         </div>
       </div>
+         <ContactUsModal isOpen={open} onClose={() => setOpen(false)} />
     </section>
   );
 }

@@ -30,7 +30,7 @@ code {
 
   /* Shadows */
   --shadow-glow: 0 0 60px rgba(239, 1, 100, 0.219); /* Pinkish glow */
-  --shadow-glow-secondary: 0 0 40px rgba(54, 253, 253, 0.756);
+  --shadow-glow-secondary: 0 0 20px rgba(54, 253, 253, 0.44);
 }
 
 @keyframes scroll {
@@ -71,3 +71,15 @@ code {
     transform: translate(-10px, -10px);
   }
 }
+
+
+.nav-link {
+  outline: none;
+  border: none;
+}
+.nav-link:focus {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
