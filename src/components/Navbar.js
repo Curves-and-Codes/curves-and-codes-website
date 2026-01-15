@@ -5,7 +5,7 @@ import "./css/navBar.css";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import ContactUsModal from "../screens/ContactUsModal";
 
-
+// Enhanced navigation configuration
 // Navigation config
 const navLinks = [
   { name: "Home", path: "/" },
