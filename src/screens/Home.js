@@ -1,4 +1,5 @@
 import React from "react";
+// Home screen - Main landing page
 import DemoCard from "../components/DemoCard";
 import ServiceCard from "../components/Cards/ServiceCard";
 import ClientCard from "../components/Cards/ClientCard";
