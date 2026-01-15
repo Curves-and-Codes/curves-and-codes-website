@@ -4,7 +4,7 @@ import logo from "../assests/images/logo.png";
 import "./css/navBar.css";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
-
+// Enhanced navigation configuration
 // Navigation config
 const navLinks = [
   { name: "Home", path: "/" },
