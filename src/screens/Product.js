@@ -184,7 +184,7 @@ function Product() {
             className="text-4xl sm:text-4xl md:text-5xl text-white px-4 mt-3 font-extrabold leading-tight"
           />
           <p className="text-xl text-white max-w-4xl mx-auto leading-relaxed mt-4">
-            Discover our cutting-edge suite of solutions designed to transform your business with AI, security, and smart infrastructure.
+            Discover our cutting-edge suite of innovative solutions designed to transform your business with AI, security, and smart infrastructure.
           </p>
         </div>
       </div>
